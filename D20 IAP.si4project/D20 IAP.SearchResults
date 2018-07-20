@@ -1,0 +1,4 @@
+---- crc16_ccitt Matches (3 in 3 files) ----
+crc16.c (SAMD20 Uart Bootloader\src\Xmodem) line 53 : unsigned short crc16_ccitt(const unsigned char *buf, int len)
+crc16.h (SAMD20 Uart Bootloader\src\Xmodem) line 4 : unsigned short crc16_ccitt(const unsigned char *buf, int len);
+check in Xmodem.c (SAMD20 Uart Bootloader\src\Xmodem) : 		unsigned short crc = crc16_ccitt(buf, sz);

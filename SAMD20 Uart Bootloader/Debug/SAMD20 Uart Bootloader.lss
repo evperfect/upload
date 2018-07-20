@@ -1,0 +1,2515 @@
+
+SAMD20 Uart Bootloader.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000be4  00000000  00000000  00008000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          0000002c  20000000  20000000  00010000  2**2
+                  ALLOC
+  2 .stack        00000204  2000002c  2000002c  00010000  2**0
+                  ALLOC
+  3 .ARM.attributes 00000028  00000000  00000000  00008be4  2**0
+                  CONTENTS, READONLY
+  4 .comment      0000005b  00000000  00000000  00008c0c  2**0
+                  CONTENTS, READONLY
+  5 .debug_info   00008945  00000000  00000000  00008c67  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00001072  00000000  00000000  000115ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_loc    000017aa  00000000  00000000  0001261e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_aranges 00000190  00000000  00000000  00013dc8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_ranges 00000168  00000000  00000000  00013f58  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_macro  0000ef19  00000000  00000000  000140c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   000035cf  00000000  00000000  00022fd9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_str    00058609  00000000  00000000  000265a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_frame  00000390  00000000  00000000  0007ebb4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <_sfixed>:
+   0:	20000230 	.word	0x20000230
+   4:	0000077d 	.word	0x0000077d
+   8:	00000779 	.word	0x00000779
+   c:	00000779 	.word	0x00000779
+	...
+  2c:	00000779 	.word	0x00000779
+	...
+  38:	00000779 	.word	0x00000779
+  3c:	00000779 	.word	0x00000779
+  40:	00000779 	.word	0x00000779
+  44:	00000779 	.word	0x00000779
+  48:	00000779 	.word	0x00000779
+  4c:	00000779 	.word	0x00000779
+  50:	00000779 	.word	0x00000779
+  54:	00000779 	.word	0x00000779
+  58:	00000779 	.word	0x00000779
+  5c:	00000779 	.word	0x00000779
+  60:	00000779 	.word	0x00000779
+  64:	00000779 	.word	0x00000779
+  68:	00000779 	.word	0x00000779
+  6c:	00000779 	.word	0x00000779
+  70:	00000779 	.word	0x00000779
+  74:	00000779 	.word	0x00000779
+  78:	00000779 	.word	0x00000779
+  7c:	00000779 	.word	0x00000779
+  80:	00000779 	.word	0x00000779
+  84:	00000779 	.word	0x00000779
+  88:	00000779 	.word	0x00000779
+  8c:	00000779 	.word	0x00000779
+  90:	00000779 	.word	0x00000779
+  94:	00000779 	.word	0x00000779
+  98:	00000779 	.word	0x00000779
+  9c:	00000779 	.word	0x00000779
+  a0:	00000779 	.word	0x00000779
+
+000000a4 <__do_global_dtors_aux>:
+  a4:	b510      	push	{r4, lr}
+  a6:	4c06      	ldr	r4, [pc, #24]	; (c0 <__do_global_dtors_aux+0x1c>)
+  a8:	7823      	ldrb	r3, [r4, #0]
+  aa:	2b00      	cmp	r3, #0
+  ac:	d107      	bne.n	be <__do_global_dtors_aux+0x1a>
+  ae:	4b05      	ldr	r3, [pc, #20]	; (c4 <__do_global_dtors_aux+0x20>)
+  b0:	2b00      	cmp	r3, #0
+  b2:	d002      	beq.n	ba <__do_global_dtors_aux+0x16>
+  b4:	4804      	ldr	r0, [pc, #16]	; (c8 <__do_global_dtors_aux+0x24>)
+  b6:	e000      	b.n	ba <__do_global_dtors_aux+0x16>
+  b8:	bf00      	nop
+  ba:	2301      	movs	r3, #1
+  bc:	7023      	strb	r3, [r4, #0]
+  be:	bd10      	pop	{r4, pc}
+  c0:	20000000 	.word	0x20000000
+  c4:	00000000 	.word	0x00000000
+  c8:	00000be4 	.word	0x00000be4
+
+000000cc <frame_dummy>:
+  cc:	b508      	push	{r3, lr}
+  ce:	4b08      	ldr	r3, [pc, #32]	; (f0 <frame_dummy+0x24>)
+  d0:	2b00      	cmp	r3, #0
+  d2:	d003      	beq.n	dc <frame_dummy+0x10>
+  d4:	4807      	ldr	r0, [pc, #28]	; (f4 <frame_dummy+0x28>)
+  d6:	4908      	ldr	r1, [pc, #32]	; (f8 <frame_dummy+0x2c>)
+  d8:	e000      	b.n	dc <frame_dummy+0x10>
+  da:	bf00      	nop
+  dc:	4807      	ldr	r0, [pc, #28]	; (fc <frame_dummy+0x30>)
+  de:	6803      	ldr	r3, [r0, #0]
+  e0:	2b00      	cmp	r3, #0
+  e2:	d003      	beq.n	ec <frame_dummy+0x20>
+  e4:	4b06      	ldr	r3, [pc, #24]	; (100 <frame_dummy+0x34>)
+  e6:	2b00      	cmp	r3, #0
+  e8:	d000      	beq.n	ec <frame_dummy+0x20>
+  ea:	4798      	blx	r3
+  ec:	bd08      	pop	{r3, pc}
+  ee:	46c0      	nop			; (mov r8, r8)
+  f0:	00000000 	.word	0x00000000
+  f4:	00000be4 	.word	0x00000be4
+  f8:	20000004 	.word	0x20000004
+  fc:	00000be4 	.word	0x00000be4
+ 100:	00000000 	.word	0x00000000
+
+00000104 <configure_nvm>:
+ */ 
+#include "nvm_flash.h"
+
+
+void configure_nvm(void)
+{
+ 104:	b507      	push	{r0, r1, r2, lr}
+{
+	/* Sanity check the parameters */
+	Assert(config);
+
+	/* Write the default configuration for the NVM configuration */
+	config->sleep_power_mode  = NVM_SLEEP_POWER_MODE_WAKEONACCESS;
+ 106:	2300      	movs	r3, #0
+ 108:	4669      	mov	r1, sp
+	config->manual_page_write = true;
+	config->wait_states       = NVMCTRL->CTRLB.bit.RWS;
+ 10a:	4a06      	ldr	r2, [pc, #24]	; (124 <configure_nvm+0x20>)
+{
+	/* Sanity check the parameters */
+	Assert(config);
+
+	/* Write the default configuration for the NVM configuration */
+	config->sleep_power_mode  = NVM_SLEEP_POWER_MODE_WAKEONACCESS;
+ 10c:	700b      	strb	r3, [r1, #0]
+	config->manual_page_write = true;
+	config->wait_states       = NVMCTRL->CTRLB.bit.RWS;
+ 10e:	6852      	ldr	r2, [r2, #4]
+	struct nvm_config config_nvm;
+	nvm_get_config_defaults(&config_nvm);
+	/* Enable automatic page write mode */
+	config_nvm.manual_page_write = false;
+	nvm_set_config(&config_nvm);
+ 110:	4668      	mov	r0, sp
+ 112:	06d2      	lsls	r2, r2, #27
+ 114:	0f12      	lsrs	r2, r2, #28
+	config->disable_cache     = false;
+ 116:	70cb      	strb	r3, [r1, #3]
+#if (SAMC20) || (SAMC21)
+	config->disable_rww_cache = false;
+#endif
+	config->cache_readmode    = NVM_CACHE_READMODE_NO_MISS_PENALTY;
+ 118:	710b      	strb	r3, [r1, #4]
+void configure_nvm(void)
+{
+	struct nvm_config config_nvm;
+	nvm_get_config_defaults(&config_nvm);
+	/* Enable automatic page write mode */
+	config_nvm.manual_page_write = false;
+ 11a:	704b      	strb	r3, [r1, #1]
+	nvm_set_config(&config_nvm);
+ 11c:	4b02      	ldr	r3, [pc, #8]	; (128 <configure_nvm+0x24>)
+	Assert(config);
+
+	/* Write the default configuration for the NVM configuration */
+	config->sleep_power_mode  = NVM_SLEEP_POWER_MODE_WAKEONACCESS;
+	config->manual_page_write = true;
+	config->wait_states       = NVMCTRL->CTRLB.bit.RWS;
+ 11e:	708a      	strb	r2, [r1, #2]
+ 120:	4798      	blx	r3
+}
+ 122:	bd07      	pop	{r0, r1, r2, pc}
+ 124:	41004000 	.word	0x41004000
+ 128:	000004ed 	.word	0x000004ed
+
+0000012c <nvm_flash_init>:
+
+void nvm_flash_init(void)
+{
+ 12c:	b508      	push	{r3, lr}
+	configure_nvm();
+ 12e:	4b01      	ldr	r3, [pc, #4]	; (134 <nvm_flash_init+0x8>)
+ 130:	4798      	blx	r3
+}
+ 132:	bd08      	pop	{r3, pc}
+ 134:	00000105 	.word	0x00000105
+
+00000138 <nvm_flash_write>:
+
+uint8_t  nvm_flash_write( uint32_t target_address,uint8_t *DateBuffer,uint8_t len,uint8_t backup)
+{
+ 138:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 13a:	b0c3      	sub	sp, #268	; 0x10c
+ 13c:	9201      	str	r2, [sp, #4]
+    uint16_t row_number;
+    uint32_t  row_address;
+    uint8_t temp_buffer[FLASH_ROW_SIZE],offset;
+
+    
+    if (target_address > MAX_FLASH_ADDR)
+ 13e:	2280      	movs	r2, #128	; 0x80
+{
+	configure_nvm();
+}
+
+uint8_t  nvm_flash_write( uint32_t target_address,uint8_t *DateBuffer,uint8_t len,uint8_t backup)
+{
+ 140:	1c06      	adds	r6, r0, #0
+ 142:	1c0f      	adds	r7, r1, #0
+    uint8_t temp_buffer[FLASH_ROW_SIZE],offset;
+
+    
+    if (target_address > MAX_FLASH_ADDR)
+    {
+        return 1;
+ 144:	2001      	movs	r0, #1
+    uint16_t row_number;
+    uint32_t  row_address;
+    uint8_t temp_buffer[FLASH_ROW_SIZE],offset;
+
+    
+    if (target_address > MAX_FLASH_ADDR)
+ 146:	02d2      	lsls	r2, r2, #11
+ 148:	4296      	cmp	r6, r2
+ 14a:	d83b      	bhi.n	1c4 <nvm_flash_write+0x8c>
+    {
+        return 1;
+    }
+    row_number = target_address / FLASH_ROW_SIZE;
+ 14c:	0a34      	lsrs	r4, r6, #8
+    }  
+    if ( len > FLASH_ROW_SIZE )
+    {
+       return 3;
+    }
+    row_address = row_number * FLASH_ROW_SIZE;
+ 14e:	0224      	lsls	r4, r4, #8
+	offset = target_address % FLASH_ROW_SIZE;
+	if(backup)
+ 150:	2b00      	cmp	r3, #0
+ 152:	d013      	beq.n	17c <nvm_flash_write+0x44>
+	{
+		nvm_read_buffer(row_address,&temp_buffer[0],FLASH_PAGE_SIZE);
+ 154:	4d1c      	ldr	r5, [pc, #112]	; (1c8 <nvm_flash_write+0x90>)
+ 156:	a902      	add	r1, sp, #8
+ 158:	2240      	movs	r2, #64	; 0x40
+ 15a:	1c20      	adds	r0, r4, #0
+ 15c:	47a8      	blx	r5
+		nvm_read_buffer(row_address+FLASH_PAGE_SIZE,&temp_buffer[FLASH_PAGE_SIZE],FLASH_PAGE_SIZE);
+ 15e:	1c20      	adds	r0, r4, #0
+ 160:	a912      	add	r1, sp, #72	; 0x48
+ 162:	2240      	movs	r2, #64	; 0x40
+ 164:	3040      	adds	r0, #64	; 0x40
+ 166:	47a8      	blx	r5
+		nvm_read_buffer(row_address+FLASH_PAGE_SIZE*2,&temp_buffer[FLASH_PAGE_SIZE*2],FLASH_PAGE_SIZE);
+ 168:	1c20      	adds	r0, r4, #0
+ 16a:	a922      	add	r1, sp, #136	; 0x88
+ 16c:	2240      	movs	r2, #64	; 0x40
+ 16e:	3080      	adds	r0, #128	; 0x80
+ 170:	47a8      	blx	r5
+		nvm_read_buffer(row_address+FLASH_PAGE_SIZE*3,&temp_buffer[FLASH_PAGE_SIZE*3],FLASH_PAGE_SIZE);
+ 172:	1c20      	adds	r0, r4, #0
+ 174:	30c0      	adds	r0, #192	; 0xc0
+ 176:	a932      	add	r1, sp, #200	; 0xc8
+ 178:	2240      	movs	r2, #64	; 0x40
+ 17a:	47a8      	blx	r5
+{
+	configure_nvm();
+}
+
+uint8_t  nvm_flash_write( uint32_t target_address,uint8_t *DateBuffer,uint8_t len,uint8_t backup)
+{
+ 17c:	2300      	movs	r3, #0
+		nvm_read_buffer(row_address+FLASH_PAGE_SIZE,&temp_buffer[FLASH_PAGE_SIZE],FLASH_PAGE_SIZE);
+		nvm_read_buffer(row_address+FLASH_PAGE_SIZE*2,&temp_buffer[FLASH_PAGE_SIZE*2],FLASH_PAGE_SIZE);
+		nvm_read_buffer(row_address+FLASH_PAGE_SIZE*3,&temp_buffer[FLASH_PAGE_SIZE*3],FLASH_PAGE_SIZE);
+	}  
+	
+    for(uint8_t i=0;i<len;i++)
+ 17e:	9901      	ldr	r1, [sp, #4]
+ 180:	b2da      	uxtb	r2, r3
+ 182:	428a      	cmp	r2, r1
+ 184:	d206      	bcs.n	194 <nvm_flash_write+0x5c>
+    {
+        temp_buffer[i+offset] = DateBuffer[i];
+ 186:	a802      	add	r0, sp, #8
+ 188:	18c1      	adds	r1, r0, r3
+ 18a:	5cf8      	ldrb	r0, [r7, r3]
+ 18c:	b2f2      	uxtb	r2, r6
+ 18e:	5488      	strb	r0, [r1, r2]
+ 190:	3301      	adds	r3, #1
+ 192:	e7f4      	b.n	17e <nvm_flash_write+0x46>
+    }
+    nvm_erase_row(row_address);
+ 194:	4b0d      	ldr	r3, [pc, #52]	; (1cc <nvm_flash_write+0x94>)
+ 196:	1c20      	adds	r0, r4, #0
+ 198:	4798      	blx	r3
+	nvm_write_buffer(row_address,temp_buffer,FLASH_PAGE_SIZE);
+ 19a:	4d0d      	ldr	r5, [pc, #52]	; (1d0 <nvm_flash_write+0x98>)
+ 19c:	a902      	add	r1, sp, #8
+ 19e:	2240      	movs	r2, #64	; 0x40
+ 1a0:	1c20      	adds	r0, r4, #0
+ 1a2:	47a8      	blx	r5
+    nvm_write_buffer(row_address+FLASH_PAGE_SIZE,&temp_buffer[FLASH_PAGE_SIZE],FLASH_PAGE_SIZE);
+ 1a4:	1c20      	adds	r0, r4, #0
+ 1a6:	a912      	add	r1, sp, #72	; 0x48
+ 1a8:	2240      	movs	r2, #64	; 0x40
+ 1aa:	3040      	adds	r0, #64	; 0x40
+ 1ac:	47a8      	blx	r5
+    nvm_write_buffer(row_address+FLASH_PAGE_SIZE*2,&temp_buffer[FLASH_PAGE_SIZE*2],FLASH_PAGE_SIZE);
+ 1ae:	1c20      	adds	r0, r4, #0
+ 1b0:	a922      	add	r1, sp, #136	; 0x88
+ 1b2:	2240      	movs	r2, #64	; 0x40
+ 1b4:	3080      	adds	r0, #128	; 0x80
+ 1b6:	47a8      	blx	r5
+    nvm_write_buffer(row_address+FLASH_PAGE_SIZE*3,&temp_buffer[FLASH_PAGE_SIZE*3],FLASH_PAGE_SIZE);
+ 1b8:	1c20      	adds	r0, r4, #0
+ 1ba:	30c0      	adds	r0, #192	; 0xc0
+ 1bc:	a932      	add	r1, sp, #200	; 0xc8
+ 1be:	2240      	movs	r2, #64	; 0x40
+ 1c0:	47a8      	blx	r5
+    return 0;
+ 1c2:	2000      	movs	r0, #0
+}
+ 1c4:	b043      	add	sp, #268	; 0x10c
+ 1c6:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 1c8:	000006b1 	.word	0x000006b1
+ 1cc:	00000721 	.word	0x00000721
+ 1d0:	00000611 	.word	0x00000611
+
+000001d4 <nvm_flash_read>:
+
+uint8_t  nvm_flash_read( uint32_t target_address,uint8_t *DateBuffer,uint8_t len)
+{
+ 1d4:	b5f0      	push	{r4, r5, r6, r7, lr}
+	uint16_t  row_number;
+	uint32_t  row_address;
+	uint8_t temp_buffer[FLASH_ROW_SIZE],offset;
+
+	
+	if (target_address > MAX_FLASH_ADDR)
+ 1d6:	2380      	movs	r3, #128	; 0x80
+    nvm_write_buffer(row_address+FLASH_PAGE_SIZE*3,&temp_buffer[FLASH_PAGE_SIZE*3],FLASH_PAGE_SIZE);
+    return 0;
+}
+
+uint8_t  nvm_flash_read( uint32_t target_address,uint8_t *DateBuffer,uint8_t len)
+{
+ 1d8:	b0c3      	sub	sp, #268	; 0x10c
+ 1da:	1c06      	adds	r6, r0, #0
+ 1dc:	1c0f      	adds	r7, r1, #0
+ 1de:	9201      	str	r2, [sp, #4]
+	uint8_t temp_buffer[FLASH_ROW_SIZE],offset;
+
+	
+	if (target_address > MAX_FLASH_ADDR)
+	{
+		return 1;
+ 1e0:	2001      	movs	r0, #1
+	uint16_t  row_number;
+	uint32_t  row_address;
+	uint8_t temp_buffer[FLASH_ROW_SIZE],offset;
+
+	
+	if (target_address > MAX_FLASH_ADDR)
+ 1e2:	02db      	lsls	r3, r3, #11
+ 1e4:	429e      	cmp	r6, r3
+ 1e6:	d822      	bhi.n	22e <STACK_SIZE+0x2e>
+	{
+		return 1;
+	}
+	row_number = target_address / FLASH_ROW_SIZE;
+ 1e8:	0a35      	lsrs	r5, r6, #8
+	}
+	if ( len > FLASH_ROW_SIZE )
+	{
+		return 3;
+	}
+	row_address = row_number * FLASH_ROW_SIZE;
+ 1ea:	022d      	lsls	r5, r5, #8
+	offset = target_address % FLASH_ROW_SIZE;
+	nvm_read_buffer(row_address,temp_buffer,FLASH_PAGE_SIZE);
+ 1ec:	4c11      	ldr	r4, [pc, #68]	; (234 <STACK_SIZE+0x34>)
+ 1ee:	a902      	add	r1, sp, #8
+ 1f0:	2240      	movs	r2, #64	; 0x40
+ 1f2:	1c28      	adds	r0, r5, #0
+ 1f4:	47a0      	blx	r4
+	nvm_read_buffer(row_address+FLASH_PAGE_SIZE,&temp_buffer[FLASH_PAGE_SIZE],FLASH_PAGE_SIZE);
+ 1f6:	1c28      	adds	r0, r5, #0
+ 1f8:	a912      	add	r1, sp, #72	; 0x48
+ 1fa:	2240      	movs	r2, #64	; 0x40
+ 1fc:	3040      	adds	r0, #64	; 0x40
+ 1fe:	47a0      	blx	r4
+	nvm_read_buffer(row_address+FLASH_PAGE_SIZE*2,&temp_buffer[FLASH_PAGE_SIZE*2],FLASH_PAGE_SIZE);
+ 200:	1c28      	adds	r0, r5, #0
+ 202:	a922      	add	r1, sp, #136	; 0x88
+ 204:	2240      	movs	r2, #64	; 0x40
+ 206:	3080      	adds	r0, #128	; 0x80
+ 208:	47a0      	blx	r4
+	nvm_read_buffer(row_address+FLASH_PAGE_SIZE*3,&temp_buffer[FLASH_PAGE_SIZE*3],FLASH_PAGE_SIZE);
+ 20a:	1c28      	adds	r0, r5, #0
+ 20c:	30c0      	adds	r0, #192	; 0xc0
+ 20e:	a932      	add	r1, sp, #200	; 0xc8
+ 210:	2240      	movs	r2, #64	; 0x40
+ 212:	47a0      	blx	r4
+	for(uint8_t i=0;i<len;i++)
+ 214:	2300      	movs	r3, #0
+ 216:	9901      	ldr	r1, [sp, #4]
+ 218:	b2da      	uxtb	r2, r3
+ 21a:	428a      	cmp	r2, r1
+ 21c:	d206      	bcs.n	22c <STACK_SIZE+0x2c>
+	{
+		DateBuffer[i] = temp_buffer[offset+i];
+ 21e:	a802      	add	r0, sp, #8
+ 220:	18c1      	adds	r1, r0, r3
+ 222:	b2f2      	uxtb	r2, r6
+ 224:	5c8a      	ldrb	r2, [r1, r2]
+ 226:	54fa      	strb	r2, [r7, r3]
+ 228:	3301      	adds	r3, #1
+ 22a:	e7f4      	b.n	216 <STACK_SIZE+0x16>
+	}
+	return 0;
+ 22c:	2000      	movs	r0, #0
+}
+ 22e:	b043      	add	sp, #268	; 0x10c
+ 230:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 232:	46c0      	nop			; (mov r8, r8)
+ 234:	000006b1 	.word	0x000006b1
+
+00000238 <program_memory>:
+ * \param address address of the Flash page to be programmed
+ * \param buffer  pointer to the buffer containing data to be programmed
+ * \param len     length of the data to be programmed to Flash
+ */
+void program_memory(uint32_t address, uint8_t *buffer, uint16_t len)
+{
+ 238:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 23a:	1c04      	adds	r4, r0, #0
+ 23c:	1c0f      	adds	r7, r1, #0
+ 23e:	1e16      	subs	r6, r2, #0
+	/* Check if length is greater than Flash page size */
+	if (len > NVMCTRL_PAGE_SIZE) {
+ 240:	2e40      	cmp	r6, #64	; 0x40
+ 242:	d922      	bls.n	28a <program_memory+0x52>
+ 244:	1c05      	adds	r5, r0, #0
+		uint32_t offset = 0;
+
+		while (len > NVMCTRL_PAGE_SIZE) {
+			/* Check if it is first page of a row */
+			if ((address & 0xFF) == 0) {
+ 246:	b2eb      	uxtb	r3, r5
+ 248:	2b00      	cmp	r3, #0
+ 24a:	d102      	bne.n	252 <program_memory+0x1a>
+				/* Erase row */
+				nvm_erase_row(address);
+ 24c:	1c28      	adds	r0, r5, #0
+ 24e:	4b14      	ldr	r3, [pc, #80]	; (2a0 <program_memory+0x68>)
+ 250:	4798      	blx	r3
+ 252:	1b39      	subs	r1, r7, r4
+ 254:	1949      	adds	r1, r1, r5
+			}
+			/* Write one page data to flash */
+			nvm_write_buffer(address, buffer + offset, NVMCTRL_PAGE_SIZE);
+ 256:	1c28      	adds	r0, r5, #0
+ 258:	4b12      	ldr	r3, [pc, #72]	; (2a4 <program_memory+0x6c>)
+ 25a:	2240      	movs	r2, #64	; 0x40
+ 25c:	4798      	blx	r3
+			/* Increment the address to be programmed */
+			address += NVMCTRL_PAGE_SIZE;
+ 25e:	3540      	adds	r5, #64	; 0x40
+ 260:	1933      	adds	r3, r6, r4
+ 262:	1b5b      	subs	r3, r3, r5
+{
+	/* Check if length is greater than Flash page size */
+	if (len > NVMCTRL_PAGE_SIZE) {
+		uint32_t offset = 0;
+
+		while (len > NVMCTRL_PAGE_SIZE) {
+ 264:	b29b      	uxth	r3, r3
+ 266:	2b40      	cmp	r3, #64	; 0x40
+ 268:	d8ed      	bhi.n	246 <program_memory+0xe>
+ 26a:	1c33      	adds	r3, r6, #0
+ 26c:	3b41      	subs	r3, #65	; 0x41
+ 26e:	b29b      	uxth	r3, r3
+ 270:	099b      	lsrs	r3, r3, #6
+ 272:	0199      	lsls	r1, r3, #6
+ 274:	3440      	adds	r4, #64	; 0x40
+ 276:	1c32      	adds	r2, r6, #0
+ 278:	3a40      	subs	r2, #64	; 0x40
+ 27a:	1860      	adds	r0, r4, r1
+ 27c:	1c59      	adds	r1, r3, #1
+ 27e:	019b      	lsls	r3, r3, #6
+ 280:	0189      	lsls	r1, r1, #6
+ 282:	1ad2      	subs	r2, r2, r3
+		}
+
+		/* Check if there is data remaining to be programmed */
+		if (len > 0) {
+			/* Write the data to flash */
+			nvm_write_buffer(address, buffer + offset, len);
+ 284:	1879      	adds	r1, r7, r1
+ 286:	b292      	uxth	r2, r2
+ 288:	e007      	b.n	29a <program_memory+0x62>
+		}
+	} else {
+		/* Check if it is first page of a row) */
+		if ((address & 0xFF) == 0) {
+ 28a:	b2c3      	uxtb	r3, r0
+ 28c:	2b00      	cmp	r3, #0
+ 28e:	d101      	bne.n	294 <program_memory+0x5c>
+			/* Erase row */
+			nvm_erase_row(address);
+ 290:	4b03      	ldr	r3, [pc, #12]	; (2a0 <program_memory+0x68>)
+ 292:	4798      	blx	r3
+		}
+		/* Write the data to flash */
+		nvm_write_buffer(address, buffer, len);
+ 294:	1c20      	adds	r0, r4, #0
+ 296:	1c39      	adds	r1, r7, #0
+ 298:	1c32      	adds	r2, r6, #0
+ 29a:	4b02      	ldr	r3, [pc, #8]	; (2a4 <program_memory+0x6c>)
+ 29c:	4798      	blx	r3
+	}
+ 29e:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+ 2a0:	00000721 	.word	0x00000721
+ 2a4:	00000611 	.word	0x00000611
+
+000002a8 <usart_open>:
+
+// UART setup , 115200,8,N,1
+void usart_open()
+{
+	/* Enable & configure alternate function C for pins PA24 & PA25 */
+	PORT->Group[0].PINCFG[24].bit.PMUXEN = 1;
+ 2a8:	4b14      	ldr	r3, [pc, #80]	; (2fc <usart_open+0x54>)
+ 2aa:	2201      	movs	r2, #1
+ 2ac:	7819      	ldrb	r1, [r3, #0]
+ 2ae:	4311      	orrs	r1, r2
+ 2b0:	7019      	strb	r1, [r3, #0]
+	PORT->Group[0].PINCFG[25].bit.PMUXEN = 1;
+ 2b2:	4b13      	ldr	r3, [pc, #76]	; (300 <usart_open+0x58>)
+ 2b4:	7819      	ldrb	r1, [r3, #0]
+ 2b6:	430a      	orrs	r2, r1
+ 2b8:	701a      	strb	r2, [r3, #0]
+	PORT->Group[0].PMUX[12].reg = 0x22;
+ 2ba:	4b12      	ldr	r3, [pc, #72]	; (304 <usart_open+0x5c>)
+ 2bc:	2222      	movs	r2, #34	; 0x22
+ 2be:	701a      	strb	r2, [r3, #0]
+	/* Enable APB clock for SERCOM3 */
+	PM->APBCMASK.reg |= (1u << 5);
+ 2c0:	4b11      	ldr	r3, [pc, #68]	; (308 <usart_open+0x60>)
+ 2c2:	2120      	movs	r1, #32
+ 2c4:	6a1a      	ldr	r2, [r3, #32]
+ 2c6:	430a      	orrs	r2, r1
+ 2c8:	621a      	str	r2, [r3, #32]
+	/* Configure GCLK generator 0 as clock source for SERCOM3 */
+	GCLK->CLKCTRL.reg = 0x4010;
+ 2ca:	4a10      	ldr	r2, [pc, #64]	; (30c <usart_open+0x64>)
+ 2cc:	4b10      	ldr	r3, [pc, #64]	; (310 <usart_open+0x68>)
+ 2ce:	805a      	strh	r2, [r3, #2]
+	/* Configure SERCOM3 USART with baud 115200 8-N-1 settings */
+	SERCOM3->USART.CTRLA.reg = SERCOM_USART_CTRLA_RXPO(3) | SERCOM_USART_CTRLA_TXPO | SERCOM_USART_CTRLA_MODE(1) | SERCOM_USART_CTRLA_DORD;
+ 2d0:	4a10      	ldr	r2, [pc, #64]	; (314 <usart_open+0x6c>)
+ 2d2:	4b11      	ldr	r3, [pc, #68]	; (318 <usart_open+0x70>)
+ 2d4:	6013      	str	r3, [r2, #0]
+	while(SERCOM3->USART.STATUS.bit.SYNCBUSY);
+ 2d6:	8a11      	ldrh	r1, [r2, #16]
+ 2d8:	4b0e      	ldr	r3, [pc, #56]	; (314 <usart_open+0x6c>)
+ 2da:	0bc9      	lsrs	r1, r1, #15
+ 2dc:	d1fb      	bne.n	2d6 <usart_open+0x2e>
+	SERCOM3->USART.CTRLB.reg = SERCOM_USART_CTRLB_RXEN | SERCOM_USART_CTRLB_TXEN | SERCOM_USART_CTRLB_CHSIZE(0);
+ 2de:	21c0      	movs	r1, #192	; 0xc0
+ 2e0:	0289      	lsls	r1, r1, #10
+ 2e2:	6059      	str	r1, [r3, #4]
+	SERCOM3->USART.BAUD.reg = 50436;
+ 2e4:	490d      	ldr	r1, [pc, #52]	; (31c <usart_open+0x74>)
+ 2e6:	8159      	strh	r1, [r3, #10]
+	while(SERCOM3->USART.STATUS.bit.SYNCBUSY);
+ 2e8:	8a11      	ldrh	r1, [r2, #16]
+ 2ea:	4b0a      	ldr	r3, [pc, #40]	; (314 <usart_open+0x6c>)
+ 2ec:	0bc9      	lsrs	r1, r1, #15
+ 2ee:	d1fb      	bne.n	2e8 <usart_open+0x40>
+	SERCOM3->USART.CTRLA.reg |= 0x02; // uart enable
+ 2f0:	681a      	ldr	r2, [r3, #0]
+ 2f2:	2102      	movs	r1, #2
+ 2f4:	430a      	orrs	r2, r1
+ 2f6:	601a      	str	r2, [r3, #0]
+}
+ 2f8:	4770      	bx	lr
+ 2fa:	46c0      	nop			; (mov r8, r8)
+ 2fc:	41004458 	.word	0x41004458
+ 300:	41004459 	.word	0x41004459
+ 304:	4100443c 	.word	0x4100443c
+ 308:	40000400 	.word	0x40000400
+ 30c:	00004010 	.word	0x00004010
+ 310:	40000c00 	.word	0x40000c00
+ 314:	42001400 	.word	0x42001400
+ 318:	40310004 	.word	0x40310004
+ 31c:	ffffc504 	.word	0xffffc504
+
+00000320 <uart_write_byte>:
+
+void uart_write_byte(Sercom *sercom, uint8_t data)
+{
+	while(!sercom->USART.INTFLAG.bit.DRE);
+ 320:	7b83      	ldrb	r3, [r0, #14]
+ 322:	07da      	lsls	r2, r3, #31
+ 324:	d5fc      	bpl.n	320 <uart_write_byte>
+	sercom->USART.DATA.reg = (uint16_t)data;
+ 326:	8301      	strh	r1, [r0, #24]
+}
+ 328:	4770      	bx	lr
+
+0000032a <uart_read_byte>:
+uint8_t uart_read_byte(Sercom *sercom)
+{
+	while(!sercom->USART.INTFLAG.bit.RXC);
+ 32a:	7b83      	ldrb	r3, [r0, #14]
+ 32c:	075a      	lsls	r2, r3, #29
+ 32e:	d5fc      	bpl.n	32a <uart_read_byte>
+	return((uint8_t)(sercom->USART.DATA.reg & 0x00FF));
+ 330:	8b00      	ldrh	r0, [r0, #24]
+ 332:	b2c0      	uxtb	r0, r0
+}
+ 334:	4770      	bx	lr
+	...
+
+00000338 <usart_is_rx_ready>:
+bool usart_is_rx_ready(void) 
+{
+	return (SERCOM3->USART.INTFLAG.reg & SERCOM_USART_INTFLAG_RXC);
+ 338:	4b02      	ldr	r3, [pc, #8]	; (344 <usart_is_rx_ready+0xc>)
+ 33a:	7b98      	ldrb	r0, [r3, #14]
+ 33c:	0740      	lsls	r0, r0, #29
+ 33e:	0fc0      	lsrs	r0, r0, #31
+}
+ 340:	4770      	bx	lr
+ 342:	46c0      	nop			; (mov r8, r8)
+ 344:	42001400 	.word	0x42001400
+
+00000348 <uart_putc>:
+
+void uart_putc(char *str)
+{
+ 348:	b510      	push	{r4, lr}
+	while(*str != NULL)
+ 34a:	7803      	ldrb	r3, [r0, #0]
+ 34c:	2b00      	cmp	r3, #0
+ 34e:	d006      	beq.n	35e <uart_putc+0x16>
+	SERCOM3->USART.CTRLA.reg |= 0x02; // uart enable
+}
+
+void uart_write_byte(Sercom *sercom, uint8_t data)
+{
+	while(!sercom->USART.INTFLAG.bit.DRE);
+ 350:	4a03      	ldr	r2, [pc, #12]	; (360 <uart_putc+0x18>)
+ 352:	7b91      	ldrb	r1, [r2, #14]
+ 354:	07cc      	lsls	r4, r1, #31
+ 356:	d5fb      	bpl.n	350 <uart_putc+0x8>
+	sercom->USART.DATA.reg = (uint16_t)data;
+ 358:	8313      	strh	r3, [r2, #24]
+void uart_putc(char *str)
+{
+	while(*str != NULL)
+	{
+		uart_write_byte(SERCOM3,*str);
+		str++;
+ 35a:	3001      	adds	r0, #1
+ 35c:	e7f5      	b.n	34a <uart_putc+0x2>
+	}
+ 35e:	bd10      	pop	{r4, pc}
+ 360:	42001400 	.word	0x42001400
+
+00000364 <crc16_ccitt>:
+0x7c26,0x6c07,0x5c64,0x4c45,0x3ca2,0x2c83,0x1ce0,0x0cc1,
+0xef1f,0xff3e,0xcf5d,0xdf7c,0xaf9b,0xbfba,0x8fd9,0x9ff8,
+0x6e17,0x7e36,0x4e55,0x5e74,0x2e93,0x3eb2,0x0ed1,0x1ef0
+};
+unsigned short crc16_ccitt(const unsigned char *buf, int len)
+{
+ 364:	b530      	push	{r4, r5, lr}
+ 366:	1c02      	adds	r2, r0, #0
+	register int counter;
+	register unsigned short crc = 0;
+	for( counter = 0; counter < len; counter++)
+ 368:	1c03      	adds	r3, r0, #0
+0x6e17,0x7e36,0x4e55,0x5e74,0x2e93,0x3eb2,0x0ed1,0x1ef0
+};
+unsigned short crc16_ccitt(const unsigned char *buf, int len)
+{
+	register int counter;
+	register unsigned short crc = 0;
+ 36a:	2000      	movs	r0, #0
+ 36c:	1a9c      	subs	r4, r3, r2
+	for( counter = 0; counter < len; counter++)
+ 36e:	428c      	cmp	r4, r1
+ 370:	da0a      	bge.n	388 <crc16_ccitt+0x24>
+		crc = (crc<<8) ^ crc16tab[((crc>>8) ^ *(char *)buf++)&0x00FF];
+ 372:	781d      	ldrb	r5, [r3, #0]
+ 374:	0a04      	lsrs	r4, r0, #8
+ 376:	4065      	eors	r5, r4
+ 378:	4c04      	ldr	r4, [pc, #16]	; (38c <crc16_ccitt+0x28>)
+ 37a:	006d      	lsls	r5, r5, #1
+ 37c:	5b2c      	ldrh	r4, [r5, r4]
+ 37e:	0200      	lsls	r0, r0, #8
+ 380:	4060      	eors	r0, r4
+ 382:	b280      	uxth	r0, r0
+ 384:	3301      	adds	r3, #1
+ 386:	e7f1      	b.n	36c <crc16_ccitt+0x8>
+	return crc;
+}
+ 388:	bd30      	pop	{r4, r5, pc}
+ 38a:	46c0      	nop			; (mov r8, r8)
+ 38c:	00000970 	.word	0x00000970
+
+00000390 <UART_GetByte>:
+#include "crc16.h"
+
+volatile uint8_t nvm_flag[4];
+uint32_t receive_bytes;
+uint16_t  UART_GetByte(uint32_t timeout)
+{
+ 390:	b510      	push	{r4, lr}
+ 392:	1c04      	adds	r4, r0, #0
+	
+	uint16_t temp = 0;
+    
+	while(timeout)
+ 394:	2c00      	cmp	r4, #0
+ 396:	d009      	beq.n	3ac <UART_GetByte+0x1c>
+	{
+		if(usart_is_rx_ready() )
+ 398:	4b05      	ldr	r3, [pc, #20]	; (3b0 <UART_GetByte+0x20>)
+ 39a:	4798      	blx	r3
+ 39c:	2800      	cmp	r0, #0
+ 39e:	d003      	beq.n	3a8 <UART_GetByte+0x18>
+		{
+			temp = uart_read_byte(SERCOM3);
+ 3a0:	4b04      	ldr	r3, [pc, #16]	; (3b4 <UART_GetByte+0x24>)
+ 3a2:	4805      	ldr	r0, [pc, #20]	; (3b8 <UART_GetByte+0x28>)
+ 3a4:	4798      	blx	r3
+ 3a6:	e002      	b.n	3ae <UART_GetByte+0x1e>
+			return (temp);
+		}
+		else
+		{
+			timeout--;
+ 3a8:	3c01      	subs	r4, #1
+ 3aa:	e7f3      	b.n	394 <UART_GetByte+0x4>
+		}
+	}	
+    return (temp);
+ 3ac:	1c20      	adds	r0, r4, #0
+	
+ }
+ 3ae:	bd10      	pop	{r4, pc}
+ 3b0:	00000339 	.word	0x00000339
+ 3b4:	0000032b 	.word	0x0000032b
+ 3b8:	42001400 	.word	0x42001400
+
+000003bc <UART_PutByte>:
+ 
+ void UART_PutByte(unsigned char c)
+ {
+ 3bc:	b508      	push	{r3, lr}
+ 3be:	1c01      	adds	r1, r0, #0
+	 uart_write_byte(SERCOM3,c);
+ 3c0:	4b01      	ldr	r3, [pc, #4]	; (3c8 <UART_PutByte+0xc>)
+ 3c2:	4802      	ldr	r0, [pc, #8]	; (3cc <UART_PutByte+0x10>)
+ 3c4:	4798      	blx	r3
+ }
+ 3c6:	bd08      	pop	{r3, pc}
+ 3c8:	00000321 	.word	0x00000321
+ 3cc:	42001400 	.word	0x42001400
+
+000003d0 <XmodemReceive>:
+** 出口参数 : 无
+** 返 回 值 : 接收文件操作时的相关错误代码
+** 其他说明 : 无
+***************************************************************************************************/
+unsigned char XmodemReceive(uint32_t address)
+{
+ 3d0:	b5f0      	push	{r4, r5, r6, r7, lr}
+	unsigned char chTemp=0;
+	unsigned char xbuff[133]; /* 128 for XModem	+ 3 head chars + 2 crc + nul */
+	unsigned char packet_number = 1;
+	uint32_t target_address;
+    target_address = address;
+    receive_bytes = 0;
+ 3d2:	4f3c      	ldr	r7, [pc, #240]	; (4c4 <XmodemReceive+0xf4>)
+** 出口参数 : 无
+** 返 回 值 : 接收文件操作时的相关错误代码
+** 其他说明 : 无
+***************************************************************************************************/
+unsigned char XmodemReceive(uint32_t address)
+{
+ 3d4:	b0a5      	sub	sp, #148	; 0x94
+ 3d6:	1c05      	adds	r5, r0, #0
+	unsigned char chTemp=0;
+	unsigned char xbuff[133]; /* 128 for XModem	+ 3 head chars + 2 crc + nul */
+	unsigned char packet_number = 1;
+	uint32_t target_address;
+    target_address = address;
+    receive_bytes = 0;
+ 3d8:	2300      	movs	r3, #0
+{
+
+	uint32_t i=0;	
+	unsigned char chTemp=0;
+	unsigned char xbuff[133]; /* 128 for XModem	+ 3 head chars + 2 crc + nul */
+	unsigned char packet_number = 1;
+ 3da:	2001      	movs	r0, #1
+	uint32_t target_address;
+    target_address = address;
+    receive_bytes = 0;
+ 3dc:	603b      	str	r3, [r7, #0]
+{
+
+	uint32_t i=0;	
+	unsigned char chTemp=0;
+	unsigned char xbuff[133]; /* 128 for XModem	+ 3 head chars + 2 crc + nul */
+	unsigned char packet_number = 1;
+ 3de:	9001      	str	r0, [sp, #4]
+ 3e0:	26fa      	movs	r6, #250	; 0xfa
+ 3e2:	00b6      	lsls	r6, r6, #2
+	{
+
+		//向上位机请求发送文件
+		for(i=1000;i!=0;i--)
+		{
+			chTemp = UART_GetByte(100000);
+ 3e4:	4838      	ldr	r0, [pc, #224]	; (4c8 <XmodemReceive+0xf8>)
+ 3e6:	4939      	ldr	r1, [pc, #228]	; (4cc <XmodemReceive+0xfc>)
+ 3e8:	4788      	blx	r1
+ 3ea:	b2c4      	uxtb	r4, r0
+			if(chTemp>0)   break;
+ 3ec:	2c00      	cmp	r4, #0
+ 3ee:	d107      	bne.n	400 <XmodemReceive+0x30>
+			else	UART_PutByte('C');
+ 3f0:	2043      	movs	r0, #67	; 0x43
+ 3f2:	4b37      	ldr	r3, [pc, #220]	; (4d0 <XmodemReceive+0x100>)
+ 3f4:	3e01      	subs	r6, #1
+ 3f6:	4798      	blx	r3
+	//nvm_flash_write((APP_START_ADDRESS-4),nvm_flag,4,1); //清除写入完成标示位
+	while(1)
+	{
+
+		//向上位机请求发送文件
+		for(i=1000;i!=0;i--)
+ 3f8:	2e00      	cmp	r6, #0
+ 3fa:	d1f3      	bne.n	3e4 <XmodemReceive+0x14>
+			
+		}
+		//文件传输超时
+		if((chTemp==0)&&(i==0))
+		{
+			return TIME_OUT;
+ 3fc:	2001      	movs	r0, #1
+ 3fe:	e05f      	b.n	4c0 <XmodemReceive+0xf0>
+		}
+		//用户取消文件传输
+		else if((chTemp=='B')||(chTemp=='b'))
+ 400:	2320      	movs	r3, #32
+ 402:	1c22      	adds	r2, r4, #0
+ 404:	439a      	bics	r2, r3
+ 406:	2a42      	cmp	r2, #66	; 0x42
+ 408:	d059      	beq.n	4be <XmodemReceive+0xee>
+			return USER_CANCELED;
+		}
+		else
+		{ //开始传输文件
+			
+			while(chTemp==SOH)
+ 40a:	2c01      	cmp	r4, #1
+ 40c:	d14a      	bne.n	4a4 <XmodemReceive+0xd4>
+			{//接收到有效数据帧头
+				xbuff[0]=chTemp;
+ 40e:	466b      	mov	r3, sp
+ 410:	721c      	strb	r4, [r3, #8]
+				for(i=0;i<sizeof(xbuff);i++)
+ 412:	2400      	movs	r4, #0
+				{   //接收一帧数据
+					xbuff[i+1] = 0;
+ 414:	3401      	adds	r4, #1
+ 416:	a802      	add	r0, sp, #8
+ 418:	2600      	movs	r6, #0
+ 41a:	5506      	strb	r6, [r0, r4]
+					xbuff[i+1]=UART_GetByte(1000);
+ 41c:	20fa      	movs	r0, #250	; 0xfa
+ 41e:	0080      	lsls	r0, r0, #2
+ 420:	492a      	ldr	r1, [pc, #168]	; (4cc <XmodemReceive+0xfc>)
+ 422:	4788      	blx	r1
+ 424:	aa02      	add	r2, sp, #8
+ 426:	5510      	strb	r0, [r2, r4]
+		{ //开始传输文件
+			
+			while(chTemp==SOH)
+			{//接收到有效数据帧头
+				xbuff[0]=chTemp;
+				for(i=0;i<sizeof(xbuff);i++)
+ 428:	2c85      	cmp	r4, #133	; 0x85
+ 42a:	d1f3      	bne.n	414 <XmodemReceive+0x44>
+				{   //接收一帧数据
+					xbuff[i+1] = 0;
+					xbuff[i+1]=UART_GetByte(1000);
+				}
+
+				if((xbuff[1]==(unsigned char)~xbuff[2])&&(packet_number==xbuff[1])&&(check(1, &xbuff[3], 128)))//包序号和CRC无误
+ 42c:	4668      	mov	r0, sp
+ 42e:	7a82      	ldrb	r2, [r0, #10]
+ 430:	7a43      	ldrb	r3, [r0, #9]
+ 432:	43d2      	mvns	r2, r2
+ 434:	b2d2      	uxtb	r2, r2
+ 436:	4293      	cmp	r3, r2
+ 438:	d129      	bne.n	48e <XmodemReceive+0xbe>
+ 43a:	9901      	ldr	r1, [sp, #4]
+ 43c:	4299      	cmp	r1, r3
+ 43e:	d126      	bne.n	48e <XmodemReceive+0xbe>
+***************************************************************************************************/
+static int check(int crc, const unsigned char *buf, int sz)
+{
+	if (crc)
+	{
+		unsigned short crc = crc16_ccitt(buf, sz);
+ 440:	4b24      	ldr	r3, [pc, #144]	; (4d4 <XmodemReceive+0x104>)
+ 442:	300b      	adds	r0, #11
+ 444:	2180      	movs	r1, #128	; 0x80
+ 446:	4798      	blx	r3
+		unsigned short tcrc = (buf[sz]<<8)+buf[sz+1];
+ 448:	466b      	mov	r3, sp
+ 44a:	338b      	adds	r3, #139	; 0x8b
+ 44c:	781b      	ldrb	r3, [r3, #0]
+ 44e:	aa23      	add	r2, sp, #140	; 0x8c
+ 450:	7812      	ldrb	r2, [r2, #0]
+ 452:	021b      	lsls	r3, r3, #8
+ 454:	18d3      	adds	r3, r2, r3
+		if (crc == tcrc)
+ 456:	b29b      	uxth	r3, r3
+ 458:	4298      	cmp	r0, r3
+ 45a:	d118      	bne.n	48e <XmodemReceive+0xbe>
+ 45c:	683b      	ldr	r3, [r7, #0]
+ 45e:	1c32      	adds	r2, r6, #0
+ 460:	a802      	add	r0, sp, #8
+ 462:	1881      	adds	r1, r0, r2
+
+				if((xbuff[1]==(unsigned char)~xbuff[2])&&(packet_number==xbuff[1])&&(check(1, &xbuff[3], 128)))//包序号和CRC无误
+				{
+						for(i=0;i<128;i++)
+						{
+							if(xbuff[3+i] != CTRLZ)
+ 464:	78c9      	ldrb	r1, [r1, #3]
+					xbuff[i+1]=UART_GetByte(1000);
+				}
+
+				if((xbuff[1]==(unsigned char)~xbuff[2])&&(packet_number==xbuff[1])&&(check(1, &xbuff[3], 128)))//包序号和CRC无误
+				{
+						for(i=0;i<128;i++)
+ 466:	3201      	adds	r2, #1
+						{
+							if(xbuff[3+i] != CTRLZ)
+							{
+								receive_bytes++;
+ 468:	391a      	subs	r1, #26
+ 46a:	1e48      	subs	r0, r1, #1
+ 46c:	4181      	sbcs	r1, r0
+ 46e:	185b      	adds	r3, r3, r1
+					xbuff[i+1]=UART_GetByte(1000);
+				}
+
+				if((xbuff[1]==(unsigned char)~xbuff[2])&&(packet_number==xbuff[1])&&(check(1, &xbuff[3], 128)))//包序号和CRC无误
+				{
+						for(i=0;i<128;i++)
+ 470:	2a80      	cmp	r2, #128	; 0x80
+ 472:	d1f5      	bne.n	460 <XmodemReceive+0x90>
+ 474:	603b      	str	r3, [r7, #0]
+							if(xbuff[3+i] != CTRLZ)
+							{
+								receive_bytes++;
+							}
+						}
+						packet_number++;
+ 476:	9b01      	ldr	r3, [sp, #4]
+						program_memory(target_address,&xbuff[3],128);
+ 478:	4669      	mov	r1, sp
+							if(xbuff[3+i] != CTRLZ)
+							{
+								receive_bytes++;
+							}
+						}
+						packet_number++;
+ 47a:	3301      	adds	r3, #1
+ 47c:	b2db      	uxtb	r3, r3
+						program_memory(target_address,&xbuff[3],128);
+ 47e:	1c28      	adds	r0, r5, #0
+							if(xbuff[3+i] != CTRLZ)
+							{
+								receive_bytes++;
+							}
+						}
+						packet_number++;
+ 480:	9301      	str	r3, [sp, #4]
+						program_memory(target_address,&xbuff[3],128);
+ 482:	310b      	adds	r1, #11
+ 484:	4b14      	ldr	r3, [pc, #80]	; (4d8 <XmodemReceive+0x108>)
+ 486:	4798      	blx	r3
+						target_address += 128;						
+ 488:	3580      	adds	r5, #128	; 0x80
+						UART_PutByte(ACK);					    
+ 48a:	2006      	movs	r0, #6
+ 48c:	e000      	b.n	490 <XmodemReceive+0xc0>
+				}
+				else
+				{
+					UART_PutByte(NAK);//要求重发
+ 48e:	2015      	movs	r0, #21
+ 490:	4b0f      	ldr	r3, [pc, #60]	; (4d0 <XmodemReceive+0x100>)
+ 492:	4798      	blx	r3
+				}
+				do
+				{
+					chTemp = UART_GetByte(1000);//读取下一帧数据的帧头
+ 494:	20fa      	movs	r0, #250	; 0xfa
+ 496:	0080      	lsls	r0, r0, #2
+ 498:	490c      	ldr	r1, [pc, #48]	; (4cc <XmodemReceive+0xfc>)
+ 49a:	4788      	blx	r1
+ 49c:	b2c4      	uxtb	r4, r0
+				}while(chTemp==0);
+ 49e:	2c00      	cmp	r4, #0
+ 4a0:	d0f8      	beq.n	494 <XmodemReceive+0xc4>
+ 4a2:	e7b2      	b.n	40a <XmodemReceive+0x3a>
+				
+			}
+			UART_PutByte(chTemp);
+ 4a4:	1c20      	adds	r0, r4, #0
+ 4a6:	4e0a      	ldr	r6, [pc, #40]	; (4d0 <XmodemReceive+0x100>)
+ 4a8:	47b0      	blx	r6
+			if(chTemp==EOT)
+ 4aa:	2c04      	cmp	r4, #4
+ 4ac:	d103      	bne.n	4b6 <XmodemReceive+0xe6>
+			{//文件发送结束标志
+				UART_PutByte(ACK);
+ 4ae:	2006      	movs	r0, #6
+ 4b0:	47b0      	blx	r6
+				/*烧写最后一帧数据*/
+				return SUCCESSFULL;
+ 4b2:	2000      	movs	r0, #0
+ 4b4:	e004      	b.n	4c0 <XmodemReceive+0xf0>
+			}
+			else if(chTemp==CAN)
+ 4b6:	2c18      	cmp	r4, #24
+ 4b8:	d192      	bne.n	3e0 <XmodemReceive+0x10>
+			{
+				return PARAMETER_ERROR;
+ 4ba:	2003      	movs	r0, #3
+ 4bc:	e000      	b.n	4c0 <XmodemReceive+0xf0>
+			return TIME_OUT;
+		}
+		//用户取消文件传输
+		else if((chTemp=='B')||(chTemp=='b'))
+		{
+			return USER_CANCELED;
+ 4be:	2002      	movs	r0, #2
+			//nvm_flash_read(0x8000,&erase_row_count,1);
+			/*此处可以返回错误信息*/
+			
+		}
+	}
+} 
+ 4c0:	b025      	add	sp, #148	; 0x94
+ 4c2:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 4c4:	20000024 	.word	0x20000024
+ 4c8:	000186a0 	.word	0x000186a0
+ 4cc:	00000391 	.word	0x00000391
+ 4d0:	000003bd 	.word	0x000003bd
+ 4d4:	00000365 	.word	0x00000365
+ 4d8:	00000239 	.word	0x00000239
+
+000004dc <nvm_is_ready>:
+static inline bool nvm_is_ready(void)
+{
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	return nvm_module->INTFLAG.reg & NVMCTRL_INTFLAG_READY;
+ 4dc:	4b02      	ldr	r3, [pc, #8]	; (4e8 <nvm_is_ready+0xc>)
+ 4de:	7d18      	ldrb	r0, [r3, #20]
+ 4e0:	2301      	movs	r3, #1
+ 4e2:	4018      	ands	r0, r3
+}
+ 4e4:	4770      	bx	lr
+ 4e6:	46c0      	nop			; (mov r8, r8)
+ 4e8:	41004000 	.word	0x41004000
+
+000004ec <nvm_set_config>:
+ *                        EEPROM and/or auxiliary space configuration from being
+ *                        altered
+ */
+enum status_code nvm_set_config(
+		const struct nvm_config *const config)
+{
+ 4ec:	b538      	push	{r3, r4, r5, lr}
+#if (SAML21) || (SAMC20) || (SAMC21)
+	/* Turn on the digital interface clock */
+	PM->APBBMASK.reg |= MCLK_APBBMASK_NVMCTRL;
+#else
+	/* Turn on the digital interface clock */
+	PM->APBBMASK.reg |= PM_APBBMASK_NVMCTRL;
+ 4ee:	4b1c      	ldr	r3, [pc, #112]	; (560 <nvm_set_config+0x74>)
+ 4f0:	2104      	movs	r1, #4
+ 4f2:	69da      	ldr	r2, [r3, #28]
+#endif
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 4f4:	4c1b      	ldr	r4, [pc, #108]	; (564 <nvm_set_config+0x78>)
+#if (SAML21) || (SAMC20) || (SAMC21)
+	/* Turn on the digital interface clock */
+	PM->APBBMASK.reg |= MCLK_APBBMASK_NVMCTRL;
+#else
+	/* Turn on the digital interface clock */
+	PM->APBBMASK.reg |= PM_APBBMASK_NVMCTRL;
+ 4f6:	430a      	orrs	r2, r1
+ 4f8:	61da      	str	r2, [r3, #28]
+#endif
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 4fa:	8b22      	ldrh	r2, [r4, #24]
+ 4fc:	2320      	movs	r3, #32
+ 4fe:	33ff      	adds	r3, #255	; 0xff
+ 500:	4313      	orrs	r3, r2
+ 502:	8323      	strh	r3, [r4, #24]
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 504:	4b18      	ldr	r3, [pc, #96]	; (568 <nvm_set_config+0x7c>)
+ *                        EEPROM and/or auxiliary space configuration from being
+ *                        altered
+ */
+enum status_code nvm_set_config(
+		const struct nvm_config *const config)
+{
+ 506:	1c05      	adds	r5, r0, #0
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 508:	4798      	blx	r3
+ 50a:	1c03      	adds	r3, r0, #0
+		return STATUS_BUSY;
+ 50c:	2005      	movs	r0, #5
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 50e:	2b00      	cmp	r3, #0
+ 510:	d025      	beq.n	55e <nvm_set_config+0x72>
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+ 512:	78ea      	ldrb	r2, [r5, #3]
+
+#if (!SAMC20) && (!SAMC21)
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+ 514:	786b      	ldrb	r3, [r5, #1]
+	}
+
+#if (!SAMC20) && (!SAMC21)
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+ 516:	7829      	ldrb	r1, [r5, #0]
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+ 518:	01db      	lsls	r3, r3, #7
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+ 51a:	0492      	lsls	r2, r2, #18
+	}
+
+#if (!SAMC20) && (!SAMC21)
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+ 51c:	431a      	orrs	r2, r3
+ 51e:	23c0      	movs	r3, #192	; 0xc0
+ 520:	0209      	lsls	r1, r1, #8
+ 522:	009b      	lsls	r3, r3, #2
+ 524:	400b      	ands	r3, r1
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+ 526:	4313      	orrs	r3, r2
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+ 528:	78aa      	ldrb	r2, [r5, #2]
+ 52a:	211e      	movs	r1, #30
+ 52c:	0052      	lsls	r2, r2, #1
+ 52e:	400a      	ands	r2, r1
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+			NVMCTRL_CTRLB_READMODE(config->cache_readmode);
+ 530:	7929      	ldrb	r1, [r5, #4]
+#if (!SAMC20) && (!SAMC21)
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+ 532:	4313      	orrs	r3, r2
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+			NVMCTRL_CTRLB_READMODE(config->cache_readmode);
+ 534:	22c0      	movs	r2, #192	; 0xc0
+ 536:	0409      	lsls	r1, r1, #16
+ 538:	0292      	lsls	r2, r2, #10
+ 53a:	400a      	ands	r2, r1
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+			NVMCTRL_CTRLB_SLEEPPRM(config->sleep_power_mode) |
+			((config->manual_page_write & 0x01) << NVMCTRL_CTRLB_MANW_Pos) |
+			NVMCTRL_CTRLB_RWS(config->wait_states) |
+			((config->disable_cache & 0x01) << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+ 53c:	4313      	orrs	r3, r2
+		return STATUS_BUSY;
+	}
+
+#if (!SAMC20) && (!SAMC21)
+	/* Writing configuration to the CTRLB register */
+	nvm_module->CTRLB.reg =
+ 53e:	6063      	str	r3, [r4, #4]
+			(cache_disable_value << NVMCTRL_CTRLB_CACHEDIS_Pos) |
+			NVMCTRL_CTRLB_READMODE(config->cache_readmode);
+#endif
+
+	/* Initialize the internal device struct */
+	_nvm_dev.page_size         = (8 << nvm_module->PARAM.bit.PSZ);
+ 540:	68a2      	ldr	r2, [r4, #8]
+ 542:	4b0a      	ldr	r3, [pc, #40]	; (56c <nvm_set_config+0x80>)
+ 544:	0352      	lsls	r2, r2, #13
+ 546:	0f52      	lsrs	r2, r2, #29
+ 548:	2108      	movs	r1, #8
+ 54a:	4091      	lsls	r1, r2
+ 54c:	8019      	strh	r1, [r3, #0]
+	_nvm_dev.number_of_pages   = nvm_module->PARAM.bit.NVMP;
+ 54e:	68a2      	ldr	r2, [r4, #8]
+ 550:	805a      	strh	r2, [r3, #2]
+	_nvm_dev.manual_page_write = config->manual_page_write;
+ 552:	786a      	ldrb	r2, [r5, #1]
+ 554:	711a      	strb	r2, [r3, #4]
+
+	/* If the security bit is set, the auxiliary space cannot be written */
+	if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+ 556:	8b20      	ldrh	r0, [r4, #24]
+ 558:	05c0      	lsls	r0, r0, #23
+		return STATUS_ERR_IO;
+ 55a:	0fc0      	lsrs	r0, r0, #31
+ 55c:	0100      	lsls	r0, r0, #4
+	}
+
+	return STATUS_OK;
+}
+ 55e:	bd38      	pop	{r3, r4, r5, pc}
+ 560:	40000400 	.word	0x40000400
+ 564:	41004000 	.word	0x41004000
+ 568:	000004dd 	.word	0x000004dd
+ 56c:	2000001c 	.word	0x2000001c
+
+00000570 <nvm_execute_command>:
+ */
+enum status_code nvm_execute_command(
+		const enum nvm_command command,
+		const uint32_t address,
+		const uint32_t parameter)
+{
+ 570:	b5f7      	push	{r0, r1, r2, r4, r5, r6, r7, lr}
+	uint32_t temp;
+
+	/* Check that the address given is valid  */
+	if (address > ((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)
+ 572:	4b23      	ldr	r3, [pc, #140]	; (600 <nvm_execute_command+0x90>)
+ */
+enum status_code nvm_execute_command(
+		const enum nvm_command command,
+		const uint32_t address,
+		const uint32_t parameter)
+{
+ 574:	1c04      	adds	r4, r0, #0
+	uint32_t temp;
+
+	/* Check that the address given is valid  */
+	if (address > ((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)
+ 576:	885a      	ldrh	r2, [r3, #2]
+ 578:	881b      	ldrh	r3, [r3, #0]
+ */
+enum status_code nvm_execute_command(
+		const enum nvm_command command,
+		const uint32_t address,
+		const uint32_t parameter)
+{
+ 57a:	1c0e      	adds	r6, r1, #0
+	uint32_t temp;
+
+	/* Check that the address given is valid  */
+	if (address > ((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)
+ 57c:	4353      	muls	r3, r2
+ 57e:	4299      	cmp	r1, r3
+ 580:	d906      	bls.n	590 <nvm_execute_command+0x20>
+		&& !(address >= NVMCTRL_AUX0_ADDRESS && address <= NVMCTRL_AUX1_ADDRESS )){
+ 582:	4a20      	ldr	r2, [pc, #128]	; (604 <nvm_execute_command+0x94>)
+		if (address >= ((uint32_t)NVMCTRL_RWW_EEPROM_SIZE + NVMCTRL_RWW_EEPROM_ADDR)
+			|| address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+ 584:	2318      	movs	r3, #24
+{
+	uint32_t temp;
+
+	/* Check that the address given is valid  */
+	if (address > ((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)
+		&& !(address >= NVMCTRL_AUX0_ADDRESS && address <= NVMCTRL_AUX1_ADDRESS )){
+ 586:	1889      	adds	r1, r1, r2
+ 588:	2280      	movs	r2, #128	; 0x80
+ 58a:	0192      	lsls	r2, r2, #6
+ 58c:	4291      	cmp	r1, r2
+ 58e:	d834      	bhi.n	5fa <nvm_execute_command+0x8a>
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* turn off cache before issuing flash commands */
+	temp = nvm_module->CTRLB.reg;
+ 590:	4d1d      	ldr	r5, [pc, #116]	; (608 <nvm_execute_command+0x98>)
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 592:	4f1e      	ldr	r7, [pc, #120]	; (60c <nvm_execute_command+0x9c>)
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* turn off cache before issuing flash commands */
+	temp = nvm_module->CTRLB.reg;
+ 594:	686b      	ldr	r3, [r5, #4]
+ 596:	9301      	str	r3, [sp, #4]
+#if (SAMC20) || (SAMC21)
+	nvm_module->CTRLB.reg = ((temp &(~(NVMCTRL_CTRLB_CACHEDIS(0x2)))) 
+							| NVMCTRL_CTRLB_CACHEDIS(0x1));
+#else
+	nvm_module->CTRLB.reg = temp | NVMCTRL_CTRLB_CACHEDIS;
+ 598:	9901      	ldr	r1, [sp, #4]
+ 59a:	2380      	movs	r3, #128	; 0x80
+ 59c:	02db      	lsls	r3, r3, #11
+ 59e:	430b      	orrs	r3, r1
+ 5a0:	606b      	str	r3, [r5, #4]
+#endif
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 5a2:	8b2a      	ldrh	r2, [r5, #24]
+ 5a4:	2320      	movs	r3, #32
+ 5a6:	33ff      	adds	r3, #255	; 0xff
+ 5a8:	4313      	orrs	r3, r2
+ 5aa:	832b      	strh	r3, [r5, #24]
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 5ac:	47b8      	blx	r7
+		return STATUS_BUSY;
+ 5ae:	2305      	movs	r3, #5
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 5b0:	2800      	cmp	r0, #0
+ 5b2:	d022      	beq.n	5fa <nvm_execute_command+0x8a>
+		return STATUS_BUSY;
+	}
+
+	switch (command) {
+ 5b4:	2c06      	cmp	r4, #6
+ 5b6:	d806      	bhi.n	5c6 <nvm_execute_command+0x56>
+ 5b8:	429c      	cmp	r4, r3
+ 5ba:	d20b      	bcs.n	5d4 <nvm_execute_command+0x64>
+ 5bc:	2c02      	cmp	r4, #2
+ 5be:	d00d      	beq.n	5dc <nvm_execute_command+0x6c>
+ 5c0:	2c04      	cmp	r4, #4
+ 5c2:	d119      	bne.n	5f8 <nvm_execute_command+0x88>
+ 5c4:	e00a      	b.n	5dc <nvm_execute_command+0x6c>
+ 5c6:	2c40      	cmp	r4, #64	; 0x40
+ 5c8:	d316      	bcc.n	5f8 <nvm_execute_command+0x88>
+ 5ca:	2c41      	cmp	r4, #65	; 0x41
+ 5cc:	d906      	bls.n	5dc <nvm_execute_command+0x6c>
+ 5ce:	2c45      	cmp	r4, #69	; 0x45
+ 5d0:	d907      	bls.n	5e2 <nvm_execute_command+0x72>
+ 5d2:	e011      	b.n	5f8 <nvm_execute_command+0x88>
+		/* Commands requiring address (protected) */
+		case NVM_COMMAND_ERASE_AUX_ROW:
+		case NVM_COMMAND_WRITE_AUX_ROW:
+
+			/* Auxiliary space cannot be accessed if the security bit is set */
+			if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+ 5d4:	8b2a      	ldrh	r2, [r5, #24]
+				return STATUS_ERR_IO;
+ 5d6:	2310      	movs	r3, #16
+		/* Commands requiring address (protected) */
+		case NVM_COMMAND_ERASE_AUX_ROW:
+		case NVM_COMMAND_WRITE_AUX_ROW:
+
+			/* Auxiliary space cannot be accessed if the security bit is set */
+			if (nvm_module->STATUS.reg & NVMCTRL_STATUS_SB) {
+ 5d8:	05d1      	lsls	r1, r2, #23
+ 5da:	d40e      	bmi.n	5fa <nvm_execute_command+0x8a>
+		case NVM_COMMAND_RWWEE_ERASE_ROW:
+		case NVM_COMMAND_RWWEE_WRITE_PAGE:
+#endif
+
+			/* Set address, command will be issued elsewhere */
+			nvm_module->ADDR.reg = (uintptr_t)&NVM_MEMORY[address / 4];
+ 5dc:	08b6      	lsrs	r6, r6, #2
+ 5de:	0076      	lsls	r6, r6, #1
+ 5e0:	61ee      	str	r6, [r5, #28]
+		default:
+			return STATUS_ERR_INVALID_ARG;
+	}
+
+	/* Set command */
+	nvm_module->CTRLA.reg = command | NVMCTRL_CTRLA_CMDEX_KEY;
+ 5e2:	23a5      	movs	r3, #165	; 0xa5
+ 5e4:	021b      	lsls	r3, r3, #8
+ 5e6:	431c      	orrs	r4, r3
+ 5e8:	802c      	strh	r4, [r5, #0]
+
+	/* Wait for the nvm controller to become ready */
+	while (!nvm_is_ready()) {
+ 5ea:	47b8      	blx	r7
+ 5ec:	2800      	cmp	r0, #0
+ 5ee:	d0fc      	beq.n	5ea <nvm_execute_command+0x7a>
+	}
+
+	/* restore the setting */
+	nvm_module->CTRLB.reg = temp;
+ 5f0:	9a01      	ldr	r2, [sp, #4]
+
+	return STATUS_OK;
+ 5f2:	2300      	movs	r3, #0
+	/* Wait for the nvm controller to become ready */
+	while (!nvm_is_ready()) {
+	}
+
+	/* restore the setting */
+	nvm_module->CTRLB.reg = temp;
+ 5f4:	606a      	str	r2, [r5, #4]
+ 5f6:	e000      	b.n	5fa <nvm_execute_command+0x8a>
+		case NVM_COMMAND_ENTER_LOW_POWER_MODE:
+		case NVM_COMMAND_EXIT_LOW_POWER_MODE:
+			break;
+
+		default:
+			return STATUS_ERR_INVALID_ARG;
+ 5f8:	2317      	movs	r3, #23
+
+	/* restore the setting */
+	nvm_module->CTRLB.reg = temp;
+
+	return STATUS_OK;
+}
+ 5fa:	1c18      	adds	r0, r3, #0
+ 5fc:	bdfe      	pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 5fe:	46c0      	nop			; (mov r8, r8)
+ 600:	2000001c 	.word	0x2000001c
+ 604:	ff7fc000 	.word	0xff7fc000
+ 608:	41004000 	.word	0x41004000
+ 60c:	000004dd 	.word	0x000004dd
+
+00000610 <nvm_write_buffer>:
+ */
+enum status_code nvm_write_buffer(
+		const uint32_t destination_address,
+		const uint8_t *buffer,
+		uint16_t length)
+{
+ 610:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 612:	1c15      	adds	r5, r2, #0
+	bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the destination address is valid */
+	if (destination_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 614:	4a21      	ldr	r2, [pc, #132]	; (69c <nvm_write_buffer+0x8c>)
+ */
+enum status_code nvm_write_buffer(
+		const uint32_t destination_address,
+		const uint8_t *buffer,
+		uint16_t length)
+{
+ 616:	1c0e      	adds	r6, r1, #0
+	bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the destination address is valid */
+	if (destination_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 618:	8813      	ldrh	r3, [r2, #0]
+ 61a:	8851      	ldrh	r1, [r2, #2]
+ */
+enum status_code nvm_write_buffer(
+		const uint32_t destination_address,
+		const uint8_t *buffer,
+		uint16_t length)
+{
+ 61c:	1c04      	adds	r4, r0, #0
+	bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the destination address is valid */
+	if (destination_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 61e:	4359      	muls	r1, r3
+			|| destination_address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+		is_rww_eeprom = true;
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+ 620:	2218      	movs	r2, #24
+#ifdef FEATURE_NVM_RWWEE
+	bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the destination address is valid */
+	if (destination_address >
+ 622:	4288      	cmp	r0, r1
+ 624:	d837      	bhi.n	696 <nvm_write_buffer+0x86>
+		return STATUS_ERR_BAD_ADDRESS;
+#endif
+	}
+
+	/* Check if the write address not aligned to the start of a page */
+	if (destination_address & (_nvm_dev.page_size - 1)) {
+ 626:	1e59      	subs	r1, r3, #1
+ 628:	4201      	tst	r1, r0
+ 62a:	d134      	bne.n	696 <nvm_write_buffer+0x86>
+		return STATUS_ERR_BAD_ADDRESS;
+	}
+
+	/* Check if the write length is longer than a NVM page */
+	if (length > _nvm_dev.page_size) {
+		return STATUS_ERR_INVALID_ARG;
+ 62c:	2217      	movs	r2, #23
+	if (destination_address & (_nvm_dev.page_size - 1)) {
+		return STATUS_ERR_BAD_ADDRESS;
+	}
+
+	/* Check if the write length is longer than a NVM page */
+	if (length > _nvm_dev.page_size) {
+ 62e:	429d      	cmp	r5, r3
+ 630:	d831      	bhi.n	696 <nvm_write_buffer+0x86>
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 632:	4f1b      	ldr	r7, [pc, #108]	; (6a0 <nvm_write_buffer+0x90>)
+ 634:	47b8      	blx	r7
+		return STATUS_BUSY;
+ 636:	2205      	movs	r2, #5
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 638:	2800      	cmp	r0, #0
+ 63a:	d02c      	beq.n	696 <nvm_write_buffer+0x86>
+		return STATUS_BUSY;
+	}
+
+	/* Erase the page buffer before buffering new data */
+	nvm_module->CTRLA.reg = NVM_COMMAND_PAGE_BUFFER_CLEAR | NVMCTRL_CTRLA_CMDEX_KEY;
+ 63c:	4f19      	ldr	r7, [pc, #100]	; (6a4 <nvm_write_buffer+0x94>)
+ 63e:	4b1a      	ldr	r3, [pc, #104]	; (6a8 <nvm_write_buffer+0x98>)
+ 640:	803b      	strh	r3, [r7, #0]
+
+	/* Check if the module is busy */
+	while (!nvm_is_ready()) {
+ 642:	4a17      	ldr	r2, [pc, #92]	; (6a0 <nvm_write_buffer+0x90>)
+ 644:	4790      	blx	r2
+ 646:	2800      	cmp	r0, #0
+ 648:	d0fb      	beq.n	642 <nvm_write_buffer+0x32>
+		/* Force-wait for the buffer clear to complete */
+	}
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 64a:	8b3a      	ldrh	r2, [r7, #24]
+ 64c:	2320      	movs	r3, #32
+ 64e:	33ff      	adds	r3, #255	; 0xff
+ 650:	4313      	orrs	r3, r2
+
+	uint32_t nvm_address = destination_address / 2;
+ 652:	0860      	lsrs	r0, r4, #1
+	while (!nvm_is_ready()) {
+		/* Force-wait for the buffer clear to complete */
+	}
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 654:	833b      	strh	r3, [r7, #24]
+ 656:	0040      	lsls	r0, r0, #1
+
+	uint32_t nvm_address = destination_address / 2;
+
+	/* NVM _must_ be accessed as a series of 16-bit words, perform manual copy
+	 * to ensure alignment */
+	for (uint16_t i = 0; i < length; i += 2) {
+ 658:	2300      	movs	r3, #0
+ 65a:	b29a      	uxth	r2, r3
+ 65c:	42aa      	cmp	r2, r5
+ 65e:	d20e      	bcs.n	67e <nvm_write_buffer+0x6e>
+		uint16_t data;
+
+		/* Copy first byte of the 16-bit chunk to the temporary buffer */
+		data = buffer[i];
+ 660:	b29a      	uxth	r2, r3
+
+		/* If we are not at the end of a write request with an odd byte count,
+		 * store the next byte of data as well */
+		if (i < (length - 1)) {
+ 662:	1e6f      	subs	r7, r5, #1
+	 * to ensure alignment */
+	for (uint16_t i = 0; i < length; i += 2) {
+		uint16_t data;
+
+		/* Copy first byte of the 16-bit chunk to the temporary buffer */
+		data = buffer[i];
+ 664:	5cb1      	ldrb	r1, [r6, r2]
+
+		/* If we are not at the end of a write request with an odd byte count,
+		 * store the next byte of data as well */
+		if (i < (length - 1)) {
+ 666:	42ba      	cmp	r2, r7
+ 668:	db01      	blt.n	66e <nvm_write_buffer+0x5e>
+	 * to ensure alignment */
+	for (uint16_t i = 0; i < length; i += 2) {
+		uint16_t data;
+
+		/* Copy first byte of the 16-bit chunk to the temporary buffer */
+		data = buffer[i];
+ 66a:	1c0a      	adds	r2, r1, #0
+ 66c:	e003      	b.n	676 <nvm_write_buffer+0x66>
+
+		/* If we are not at the end of a write request with an odd byte count,
+		 * store the next byte of data as well */
+		if (i < (length - 1)) {
+			data |= (buffer[i + 1] << 8);
+ 66e:	18b2      	adds	r2, r6, r2
+ 670:	7852      	ldrb	r2, [r2, #1]
+ 672:	0212      	lsls	r2, r2, #8
+ 674:	430a      	orrs	r2, r1
+ 676:	1819      	adds	r1, r3, r0
+		}
+
+		/* Store next 16-bit chunk to the NVM memory space */
+		NVM_MEMORY[nvm_address++] = data;
+ 678:	800a      	strh	r2, [r1, #0]
+ 67a:	3302      	adds	r3, #2
+ 67c:	e7ed      	b.n	65a <nvm_write_buffer+0x4a>
+	}
+
+	/* If automatic page write mode is enable, then perform a manual NVM
+	 * write when the length of data to be programmed is less than page size
+	 */
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+ 67e:	4a07      	ldr	r2, [pc, #28]	; (69c <nvm_write_buffer+0x8c>)
+ 680:	7913      	ldrb	r3, [r2, #4]
+		return nvm_execute_command(NVM_COMMAND_WRITE_PAGE,
+				destination_address, 0);
+#endif
+	}
+
+	return STATUS_OK;
+ 682:	2200      	movs	r2, #0
+	}
+
+	/* If automatic page write mode is enable, then perform a manual NVM
+	 * write when the length of data to be programmed is less than page size
+	 */
+	if ((_nvm_dev.manual_page_write == false) && (length < NVMCTRL_PAGE_SIZE)) {
+ 684:	4293      	cmp	r3, r2
+ 686:	d106      	bne.n	696 <nvm_write_buffer+0x86>
+ 688:	2d3f      	cmp	r5, #63	; 0x3f
+ 68a:	d804      	bhi.n	696 <nvm_write_buffer+0x86>
+#ifdef FEATURE_NVM_RWWEE
+	 return ((is_rww_eeprom) ?
+				(nvm_execute_command(NVM_COMMAND_RWWEE_WRITE_PAGE,destination_address, 0)):
+	 			(nvm_execute_command(NVM_COMMAND_WRITE_PAGE,destination_address, 0)));
+#else
+		return nvm_execute_command(NVM_COMMAND_WRITE_PAGE,
+ 68c:	2004      	movs	r0, #4
+ 68e:	1c21      	adds	r1, r4, #0
+ 690:	4b06      	ldr	r3, [pc, #24]	; (6ac <nvm_write_buffer+0x9c>)
+ 692:	4798      	blx	r3
+ 694:	1c02      	adds	r2, r0, #0
+				destination_address, 0);
+#endif
+	}
+
+	return STATUS_OK;
+}
+ 696:	1c10      	adds	r0, r2, #0
+ 698:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+ 69a:	46c0      	nop			; (mov r8, r8)
+ 69c:	2000001c 	.word	0x2000001c
+ 6a0:	000004dd 	.word	0x000004dd
+ 6a4:	41004000 	.word	0x41004000
+ 6a8:	ffffa544 	.word	0xffffa544
+ 6ac:	00000571 	.word	0x00000571
+
+000006b0 <nvm_read_buffer>:
+ */
+enum status_code nvm_read_buffer(
+		const uint32_t source_address,
+		uint8_t *const buffer,
+		uint16_t length)
+{
+ 6b0:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+	/* Check if the source address is valid */
+	if (source_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 6b2:	4b18      	ldr	r3, [pc, #96]	; (714 <nvm_read_buffer+0x64>)
+ */
+enum status_code nvm_read_buffer(
+		const uint32_t source_address,
+		uint8_t *const buffer,
+		uint16_t length)
+{
+ 6b4:	1c0e      	adds	r6, r1, #0
+	/* Check if the source address is valid */
+	if (source_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 6b6:	8819      	ldrh	r1, [r3, #0]
+ 6b8:	885b      	ldrh	r3, [r3, #2]
+ */
+enum status_code nvm_read_buffer(
+		const uint32_t source_address,
+		uint8_t *const buffer,
+		uint16_t length)
+{
+ 6ba:	1c14      	adds	r4, r2, #0
+	/* Check if the source address is valid */
+	if (source_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 6bc:	434b      	muls	r3, r1
+ */
+enum status_code nvm_read_buffer(
+		const uint32_t source_address,
+		uint8_t *const buffer,
+		uint16_t length)
+{
+ 6be:	1c05      	adds	r5, r0, #0
+		if (source_address >= ((uint32_t)NVMCTRL_RWW_EEPROM_SIZE + NVMCTRL_RWW_EEPROM_ADDR)
+			|| source_address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+ 6c0:	2218      	movs	r2, #24
+		const uint32_t source_address,
+		uint8_t *const buffer,
+		uint16_t length)
+{
+	/* Check if the source address is valid */
+	if (source_address >
+ 6c2:	4298      	cmp	r0, r3
+ 6c4:	d824      	bhi.n	710 <nvm_read_buffer+0x60>
+		return STATUS_ERR_BAD_ADDRESS;
+#endif
+	}
+
+	/* Check if the read address is not aligned to the start of a page */
+	if (source_address & (_nvm_dev.page_size - 1)) {
+ 6c6:	1e4f      	subs	r7, r1, #1
+ 6c8:	4007      	ands	r7, r0
+ 6ca:	d121      	bne.n	710 <nvm_read_buffer+0x60>
+		return STATUS_ERR_BAD_ADDRESS;
+	}
+
+	/* Check if the write length is longer than a NVM page */
+	if (length > _nvm_dev.page_size) {
+		return STATUS_ERR_INVALID_ARG;
+ 6cc:	2217      	movs	r2, #23
+	if (source_address & (_nvm_dev.page_size - 1)) {
+		return STATUS_ERR_BAD_ADDRESS;
+	}
+
+	/* Check if the write length is longer than a NVM page */
+	if (length > _nvm_dev.page_size) {
+ 6ce:	428c      	cmp	r4, r1
+ 6d0:	d81e      	bhi.n	710 <nvm_read_buffer+0x60>
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 6d2:	4b11      	ldr	r3, [pc, #68]	; (718 <nvm_read_buffer+0x68>)
+ 6d4:	4798      	blx	r3
+		return STATUS_BUSY;
+ 6d6:	2205      	movs	r2, #5
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 6d8:	2800      	cmp	r0, #0
+ 6da:	d019      	beq.n	710 <nvm_read_buffer+0x60>
+		return STATUS_BUSY;
+	}
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 6dc:	4b0f      	ldr	r3, [pc, #60]	; (71c <nvm_read_buffer+0x6c>)
+ 6de:	2220      	movs	r2, #32
+ 6e0:	8b19      	ldrh	r1, [r3, #24]
+ 6e2:	32ff      	adds	r2, #255	; 0xff
+ 6e4:	430a      	orrs	r2, r1
+
+	uint32_t page_address = source_address / 2;
+ 6e6:	086d      	lsrs	r5, r5, #1
+	if (!nvm_is_ready()) {
+		return STATUS_BUSY;
+	}
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 6e8:	831a      	strh	r2, [r3, #24]
+ 6ea:	006d      	lsls	r5, r5, #1
+
+	uint32_t page_address = source_address / 2;
+
+	/* NVM _must_ be accessed as a series of 16-bit words, perform manual copy
+	 * to ensure alignment */
+	for (uint16_t i = 0; i < length; i += 2) {
+ 6ec:	1c3b      	adds	r3, r7, #0
+ 6ee:	b29a      	uxth	r2, r3
+ 6f0:	42a2      	cmp	r2, r4
+ 6f2:	d20c      	bcs.n	70e <nvm_read_buffer+0x5e>
+ 6f4:	195a      	adds	r2, r3, r5
+		/* Fetch next 16-bit chunk from the NVM memory space */
+		uint16_t data = NVM_MEMORY[page_address++];
+ 6f6:	8811      	ldrh	r1, [r2, #0]
+		/* Copy first byte of the 16-bit chunk to the destination buffer */
+		buffer[i] = (data & 0xFF);
+
+		/* If we are not at the end of a read request with an odd byte count,
+		 * store the next byte of data as well */
+		if (i < (length - 1)) {
+ 6f8:	1e60      	subs	r0, r4, #1
+
+	/* NVM _must_ be accessed as a series of 16-bit words, perform manual copy
+	 * to ensure alignment */
+	for (uint16_t i = 0; i < length; i += 2) {
+		/* Fetch next 16-bit chunk from the NVM memory space */
+		uint16_t data = NVM_MEMORY[page_address++];
+ 6fa:	b289      	uxth	r1, r1
+
+		/* Copy first byte of the 16-bit chunk to the destination buffer */
+		buffer[i] = (data & 0xFF);
+ 6fc:	b29a      	uxth	r2, r3
+ 6fe:	54b1      	strb	r1, [r6, r2]
+
+		/* If we are not at the end of a read request with an odd byte count,
+		 * store the next byte of data as well */
+		if (i < (length - 1)) {
+ 700:	4282      	cmp	r2, r0
+ 702:	da02      	bge.n	70a <nvm_read_buffer+0x5a>
+			buffer[i + 1] = (data >> 8);
+ 704:	18b2      	adds	r2, r6, r2
+ 706:	0a09      	lsrs	r1, r1, #8
+ 708:	7051      	strb	r1, [r2, #1]
+ 70a:	3302      	adds	r3, #2
+ 70c:	e7ef      	b.n	6ee <nvm_read_buffer+0x3e>
+		}
+	}
+
+	return STATUS_OK;
+ 70e:	2200      	movs	r2, #0
+}
+ 710:	1c10      	adds	r0, r2, #0
+ 712:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+ 714:	2000001c 	.word	0x2000001c
+ 718:	000004dd 	.word	0x000004dd
+ 71c:	41004000 	.word	0x41004000
+
+00000720 <nvm_erase_row>:
+ *                                 acceptable range of the NVM memory region or
+ *                                 not aligned to the start of a row
+ */
+enum status_code nvm_erase_row(
+		const uint32_t row_address)
+{
+ 720:	b538      	push	{r3, r4, r5, lr}
+		bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the row address is valid */
+	if (row_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 722:	4b11      	ldr	r3, [pc, #68]	; (768 <nvm_erase_row+0x48>)
+ *                                 acceptable range of the NVM memory region or
+ *                                 not aligned to the start of a row
+ */
+enum status_code nvm_erase_row(
+		const uint32_t row_address)
+{
+ 724:	1c04      	adds	r4, r0, #0
+		bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the row address is valid */
+	if (row_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 726:	881a      	ldrh	r2, [r3, #0]
+ 728:	8859      	ldrh	r1, [r3, #2]
+			|| row_address < NVMCTRL_RWW_EEPROM_ADDR){
+			return STATUS_ERR_BAD_ADDRESS;
+		}
+		is_rww_eeprom = true;
+#else
+		return STATUS_ERR_BAD_ADDRESS;
+ 72a:	2318      	movs	r3, #24
+		bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the row address is valid */
+	if (row_address >
+			((uint32_t)_nvm_dev.page_size * _nvm_dev.number_of_pages)) {
+ 72c:	4351      	muls	r1, r2
+#ifdef FEATURE_NVM_RWWEE
+		bool is_rww_eeprom = false;
+#endif
+
+	/* Check if the row address is valid */
+	if (row_address >
+ 72e:	4288      	cmp	r0, r1
+ 730:	d817      	bhi.n	762 <nvm_erase_row+0x42>
+		return STATUS_ERR_BAD_ADDRESS;
+#endif
+	}
+
+	/* Check if the address to erase is not aligned to the start of a row */
+	if (row_address & ((_nvm_dev.page_size * NVMCTRL_ROW_PAGES) - 1)) {
+ 732:	0092      	lsls	r2, r2, #2
+ 734:	3a01      	subs	r2, #1
+ 736:	4210      	tst	r0, r2
+ 738:	d113      	bne.n	762 <nvm_erase_row+0x42>
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 73a:	4d0c      	ldr	r5, [pc, #48]	; (76c <nvm_erase_row+0x4c>)
+ 73c:	47a8      	blx	r5
+		return STATUS_BUSY;
+ 73e:	2305      	movs	r3, #5
+
+	/* Get a pointer to the module hardware instance */
+	Nvmctrl *const nvm_module = NVMCTRL;
+
+	/* Check if the module is busy */
+	if (!nvm_is_ready()) {
+ 740:	2800      	cmp	r0, #0
+ 742:	d00e      	beq.n	762 <nvm_erase_row+0x42>
+		return STATUS_BUSY;
+	}
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+ 744:	4b0a      	ldr	r3, [pc, #40]	; (770 <nvm_erase_row+0x50>)
+ 746:	2220      	movs	r2, #32
+ 748:	8b19      	ldrh	r1, [r3, #24]
+ 74a:	32ff      	adds	r2, #255	; 0xff
+ 74c:	430a      	orrs	r2, r1
+ 74e:	831a      	strh	r2, [r3, #24]
+
+	/* Set address and command */
+	nvm_module->ADDR.reg  = (uintptr_t)&NVM_MEMORY[row_address / 4];
+ 750:	08a4      	lsrs	r4, r4, #2
+#ifdef FEATURE_NVM_RWWEE
+	nvm_module->CTRLA.reg = ((is_rww_eeprom) ?
+								(NVM_COMMAND_RWWEE_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY):
+								(NVM_COMMAND_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY));
+#else
+	nvm_module->CTRLA.reg = NVM_COMMAND_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY;
+ 752:	4a08      	ldr	r2, [pc, #32]	; (774 <nvm_erase_row+0x54>)
+
+	/* Clear error flags */
+	nvm_module->STATUS.reg |= NVMCTRL_STATUS_MASK;
+
+	/* Set address and command */
+	nvm_module->ADDR.reg  = (uintptr_t)&NVM_MEMORY[row_address / 4];
+ 754:	0064      	lsls	r4, r4, #1
+ 756:	61dc      	str	r4, [r3, #28]
+#ifdef FEATURE_NVM_RWWEE
+	nvm_module->CTRLA.reg = ((is_rww_eeprom) ?
+								(NVM_COMMAND_RWWEE_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY):
+								(NVM_COMMAND_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY));
+#else
+	nvm_module->CTRLA.reg = NVM_COMMAND_ERASE_ROW | NVMCTRL_CTRLA_CMDEX_KEY;
+ 758:	801a      	strh	r2, [r3, #0]
+#endif
+
+	while (!nvm_is_ready()) {
+ 75a:	47a8      	blx	r5
+ 75c:	2800      	cmp	r0, #0
+ 75e:	d0fc      	beq.n	75a <nvm_erase_row+0x3a>
+	}
+
+	return STATUS_OK;
+ 760:	2300      	movs	r3, #0
+}
+ 762:	1c18      	adds	r0, r3, #0
+ 764:	bd38      	pop	{r3, r4, r5, pc}
+ 766:	46c0      	nop			; (mov r8, r8)
+ 768:	2000001c 	.word	0x2000001c
+ 76c:	000004dd 	.word	0x000004dd
+ 770:	41004000 	.word	0x41004000
+ 774:	ffffa502 	.word	0xffffa502
+
+00000778 <Dummy_Handler>:
+
+/**
+ * \brief Default interrupt handler for unused IRQs.
+ */
+void Dummy_Handler(void)
+{
+ 778:	e7fe      	b.n	778 <Dummy_Handler>
+	...
+
+0000077c <Reset_Handler>:
+/**
+ * \brief This is the code that gets called on processor reset.
+ * To initialize the device, and call the main() routine.
+ */
+void Reset_Handler(void)
+{
+ 77c:	4814      	ldr	r0, [pc, #80]	; (7d0 <Reset_Handler+0x54>)
+ 77e:	4915      	ldr	r1, [pc, #84]	; (7d4 <Reset_Handler+0x58>)
+ 780:	b510      	push	{r4, lr}
+
+        /* Initialize the relocate segment */
+        pSrc = &_etext;
+        pDest = &_srelocate;
+
+        if (pSrc != pDest) {
+ 782:	4288      	cmp	r0, r1
+ 784:	d001      	beq.n	78a <Reset_Handler+0xe>
+ 786:	2300      	movs	r3, #0
+ 788:	e001      	b.n	78e <Reset_Handler+0x12>
+ 78a:	4b13      	ldr	r3, [pc, #76]	; (7d8 <Reset_Handler+0x5c>)
+ 78c:	e007      	b.n	79e <Reset_Handler+0x22>
+                for (; pDest < &_erelocate;) {
+ 78e:	4c13      	ldr	r4, [pc, #76]	; (7dc <Reset_Handler+0x60>)
+ 790:	18ca      	adds	r2, r1, r3
+ 792:	42a2      	cmp	r2, r4
+ 794:	d2f9      	bcs.n	78a <Reset_Handler+0xe>
+                        *pDest++ = *pSrc++;
+ 796:	58c4      	ldr	r4, [r0, r3]
+ 798:	3304      	adds	r3, #4
+ 79a:	6014      	str	r4, [r2, #0]
+ 79c:	e7f7      	b.n	78e <Reset_Handler+0x12>
+                }
+        }
+
+        /* Clear the zero segment */
+        for (pDest = &_szero; pDest < &_ezero;) {
+ 79e:	4a10      	ldr	r2, [pc, #64]	; (7e0 <Reset_Handler+0x64>)
+ 7a0:	1d19      	adds	r1, r3, #4
+ 7a2:	3b04      	subs	r3, #4
+ 7a4:	4293      	cmp	r3, r2
+ 7a6:	d203      	bcs.n	7b0 <Reset_Handler+0x34>
+                *pDest++ = 0;
+ 7a8:	2200      	movs	r2, #0
+ 7aa:	601a      	str	r2, [r3, #0]
+ 7ac:	1c0b      	adds	r3, r1, #0
+ 7ae:	e7f6      	b.n	79e <Reset_Handler+0x22>
+        }
+
+        /* Set the vector table base address */
+        pSrc = (uint32_t *) & _sfixed;
+        SCB->VTOR = ((uint32_t) pSrc & SCB_VTOR_TBLOFF_Msk);
+ 7b0:	4a0c      	ldr	r2, [pc, #48]	; (7e4 <Reset_Handler+0x68>)
+ 7b2:	4b0d      	ldr	r3, [pc, #52]	; (7e8 <Reset_Handler+0x6c>)
+ 7b4:	21ff      	movs	r1, #255	; 0xff
+ 7b6:	438a      	bics	r2, r1
+ 7b8:	609a      	str	r2, [r3, #8]
+
+        /* Overwriting the default value of the NVMCTRL.CTRLB.MANW bit (errata reference 13134) */
+        NVMCTRL->CTRLB.bit.MANW = 1;
+ 7ba:	4b0c      	ldr	r3, [pc, #48]	; (7ec <Reset_Handler+0x70>)
+ 7bc:	2180      	movs	r1, #128	; 0x80
+ 7be:	685a      	ldr	r2, [r3, #4]
+ 7c0:	430a      	orrs	r2, r1
+ 7c2:	605a      	str	r2, [r3, #4]
+
+        /* Initialize the C library */
+        __libc_init_array();
+ 7c4:	4b0a      	ldr	r3, [pc, #40]	; (7f0 <Reset_Handler+0x74>)
+ 7c6:	4798      	blx	r3
+
+        /* Branch to main function */
+        main();
+ 7c8:	4b0a      	ldr	r3, [pc, #40]	; (7f4 <Reset_Handler+0x78>)
+ 7ca:	4798      	blx	r3
+ 7cc:	e7fe      	b.n	7cc <Reset_Handler+0x50>
+ 7ce:	46c0      	nop			; (mov r8, r8)
+ 7d0:	00000be4 	.word	0x00000be4
+ 7d4:	20000000 	.word	0x20000000
+ 7d8:	20000004 	.word	0x20000004
+ 7dc:	20000000 	.word	0x20000000
+ 7e0:	2000002c 	.word	0x2000002c
+ 7e4:	00000000 	.word	0x00000000
+ 7e8:	e000ed00 	.word	0xe000ed00
+ 7ec:	41004000 	.word	0x41004000
+ 7f0:	00000925 	.word	0x00000925
+ 7f4:	00000815 	.word	0x00000815
+
+000007f8 <JumpToApplication>:
+
+    \param [in]    topOfMainStack  Main Stack Pointer value to set
+ */
+__attribute__( ( always_inline ) ) __STATIC_INLINE void __set_MSP(uint32_t topOfMainStack)
+{
+  __ASM volatile ("MSR msp, %0\n" : : "r" (topOfMainStack) : "sp");
+ 7f8:	6803      	ldr	r3, [r0, #0]
+ 7fa:	f383 8808 	msr	MSP, r3
+
+	/* Rebase the Stack Pointer */
+	__set_MSP(*(uint32_t *) address);
+
+	/* Rebase the vector table base address */
+	SCB->VTOR = ((uint32_t) address & SCB_VTOR_TBLOFF_Msk);
+ 7fe:	23ff      	movs	r3, #255	; 0xff
+ 800:	1c02      	adds	r2, r0, #0
+ 802:	439a      	bics	r2, r3
+ 804:	4b02      	ldr	r3, [pc, #8]	; (810 <JumpToApplication+0x18>)
+ 806:	609a      	str	r2, [r3, #8]
+
+	/* Load the Reset Handler address of the application */
+	app_start_address = *(uint32_t *)(address + 4);
+
+	/* Jump to application Reset Handler in the application */
+	asm("bx %0"::"r"(app_start_address));
+ 808:	6843      	ldr	r3, [r0, #4]
+ 80a:	4718      	bx	r3
+
+}
+ 80c:	4770      	bx	lr
+ 80e:	46c0      	nop			; (mov r8, r8)
+ 810:	e000ed00 	.word	0xe000ed00
+
+00000814 <main>:
+		 JumpToApplication(APP_START_ADDRESS);
+	}
+   
+}
+int main (void)
+{
+ 814:	b537      	push	{r0, r1, r2, r4, r5, lr}
+	uint8_t status;
+	
+	 /* Make OSC8M prescalar to zero rather divide by 8 */
+	SYSCTRL->OSC8M.bit.PRESC = 0;
+ 816:	4b34      	ldr	r3, [pc, #208]	; (8e8 <main+0xd4>)
+ 818:	4a34      	ldr	r2, [pc, #208]	; (8ec <main+0xd8>)
+ 81a:	6a19      	ldr	r1, [r3, #32]
+ 81c:	400a      	ands	r2, r1
+ 81e:	621a      	str	r2, [r3, #32]
+    /* Initialize the UART console. */
+    usart_open();
+ 820:	4b33      	ldr	r3, [pc, #204]	; (8f0 <main+0xdc>)
+ 822:	4798      	blx	r3
+	nvm_flash_init();
+ 824:	4b33      	ldr	r3, [pc, #204]	; (8f4 <main+0xe0>)
+ 826:	4798      	blx	r3
+	
+	volatile PortGroup *boot_port = (volatile PortGroup *)(&(PORT->Group[BOOT_LOAD_PIN / 32]));
+	volatile bool boot_en;
+
+	/* Enable the input mode in Boot GPIO Pin */
+	boot_port->DIRCLR.reg = GPIO_BOOT_PIN_MASK;
+ 828:	4a33      	ldr	r2, [pc, #204]	; (8f8 <main+0xe4>)
+	boot_port->PINCFG[BOOT_LOAD_PIN & 0x1F].reg = PORT_PINCFG_INEN | PORT_PINCFG_PULLEN;
+ 82a:	4934      	ldr	r1, [pc, #208]	; (8fc <main+0xe8>)
+	
+	volatile PortGroup *boot_port = (volatile PortGroup *)(&(PORT->Group[BOOT_LOAD_PIN / 32]));
+	volatile bool boot_en;
+
+	/* Enable the input mode in Boot GPIO Pin */
+	boot_port->DIRCLR.reg = GPIO_BOOT_PIN_MASK;
+ 82c:	2380      	movs	r3, #128	; 0x80
+ 82e:	021b      	lsls	r3, r3, #8
+	boot_port->PINCFG[BOOT_LOAD_PIN & 0x1F].reg = PORT_PINCFG_INEN | PORT_PINCFG_PULLEN;
+ 830:	2006      	movs	r0, #6
+	
+	volatile PortGroup *boot_port = (volatile PortGroup *)(&(PORT->Group[BOOT_LOAD_PIN / 32]));
+	volatile bool boot_en;
+
+	/* Enable the input mode in Boot GPIO Pin */
+	boot_port->DIRCLR.reg = GPIO_BOOT_PIN_MASK;
+ 832:	6053      	str	r3, [r2, #4]
+	boot_port->PINCFG[BOOT_LOAD_PIN & 0x1F].reg = PORT_PINCFG_INEN | PORT_PINCFG_PULLEN;
+ 834:	7008      	strb	r0, [r1, #0]
+	boot_port->OUTSET.reg = GPIO_BOOT_PIN_MASK;
+ 836:	6193      	str	r3, [r2, #24]
+	
+	asm("nop");asm("nop");asm("nop");
+ 838:	46c0      	nop			; (mov r8, r8)
+ 83a:	46c0      	nop			; (mov r8, r8)
+ 83c:	46c0      	nop			; (mov r8, r8)
+	asm("nop");asm("nop");asm("nop");
+ 83e:	46c0      	nop			; (mov r8, r8)
+ 840:	46c0      	nop			; (mov r8, r8)
+ 842:	46c0      	nop			; (mov r8, r8)
+	asm("nop");asm("nop");asm("nop");
+ 844:	46c0      	nop			; (mov r8, r8)
+ 846:	46c0      	nop			; (mov r8, r8)
+ 848:	46c0      	nop			; (mov r8, r8)
+
+	/* Read the BOOT_LOAD_PIN status */
+	boot_en = (boot_port->IN.reg) & GPIO_BOOT_PIN_MASK;
+ 84a:	6a10      	ldr	r0, [r2, #32]
+ 84c:	466b      	mov	r3, sp
+ 84e:	0bc0      	lsrs	r0, r0, #15
+ 850:	2101      	movs	r1, #1
+ 852:	4008      	ands	r0, r1
+ 854:	3307      	adds	r3, #7
+ 856:	7018      	strb	r0, [r3, #0]
+
+	/* Check the bootloader enable condition */
+	if (!boot_en) {
+ 858:	7818      	ldrb	r0, [r3, #0]
+ 85a:	2800      	cmp	r0, #0
+ 85c:	d009      	beq.n	872 <main+0x5e>
+		{	
+		   /* Stay in bootloader */
+		   return;
+		}
+	}
+    nvm_flash_read((APP_START_ADDRESS-4),nvm_flag,4);
+ 85e:	4c28      	ldr	r4, [pc, #160]	; (900 <main+0xec>)
+ 860:	4b28      	ldr	r3, [pc, #160]	; (904 <main+0xf0>)
+ 862:	4829      	ldr	r0, [pc, #164]	; (908 <main+0xf4>)
+ 864:	1c21      	adds	r1, r4, #0
+ 866:	2204      	movs	r2, #4
+ 868:	4798      	blx	r3
+    if( (nvm_flag[0] == 0xAA) &&(nvm_flag[1] == 0x55) && (nvm_flag[2] == 0xAA) && (nvm_flag[3] == 0x55))
+ 86a:	7823      	ldrb	r3, [r4, #0]
+ 86c:	2baa      	cmp	r3, #170	; 0xaa
+ 86e:	d11e      	bne.n	8ae <main+0x9a>
+ 870:	e010      	b.n	894 <main+0x80>
+	/* Read the BOOT_LOAD_PIN status */
+	boot_en = (boot_port->IN.reg) & GPIO_BOOT_PIN_MASK;
+
+	/* Check the bootloader enable condition */
+	if (!boot_en) {
+			asm("nop");asm("nop");asm("nop");
+ 872:	46c0      	nop			; (mov r8, r8)
+ 874:	46c0      	nop			; (mov r8, r8)
+ 876:	46c0      	nop			; (mov r8, r8)
+			asm("nop");asm("nop");asm("nop");
+ 878:	46c0      	nop			; (mov r8, r8)
+ 87a:	46c0      	nop			; (mov r8, r8)
+ 87c:	46c0      	nop			; (mov r8, r8)
+			asm("nop");asm("nop");asm("nop");
+ 87e:	46c0      	nop			; (mov r8, r8)
+ 880:	46c0      	nop			; (mov r8, r8)
+ 882:	46c0      	nop			; (mov r8, r8)
+
+		boot_en = (boot_port->IN.reg) & GPIO_BOOT_PIN_MASK;
+ 884:	6a12      	ldr	r2, [r2, #32]
+ 886:	0bd2      	lsrs	r2, r2, #15
+ 888:	4011      	ands	r1, r2
+ 88a:	7019      	strb	r1, [r3, #0]
+		if (!boot_en) 
+ 88c:	781b      	ldrb	r3, [r3, #0]
+ 88e:	2b00      	cmp	r3, #0
+ 890:	d1e5      	bne.n	85e <main+0x4a>
+ 892:	e00c      	b.n	8ae <main+0x9a>
+		   /* Stay in bootloader */
+		   return;
+		}
+	}
+    nvm_flash_read((APP_START_ADDRESS-4),nvm_flag,4);
+    if( (nvm_flag[0] == 0xAA) &&(nvm_flag[1] == 0x55) && (nvm_flag[2] == 0xAA) && (nvm_flag[3] == 0x55))
+ 894:	7863      	ldrb	r3, [r4, #1]
+ 896:	2b55      	cmp	r3, #85	; 0x55
+ 898:	d109      	bne.n	8ae <main+0x9a>
+ 89a:	78a3      	ldrb	r3, [r4, #2]
+ 89c:	2baa      	cmp	r3, #170	; 0xaa
+ 89e:	d106      	bne.n	8ae <main+0x9a>
+ 8a0:	78e3      	ldrb	r3, [r4, #3]
+ 8a2:	2b55      	cmp	r3, #85	; 0x55
+ 8a4:	d103      	bne.n	8ae <main+0x9a>
+	{
+		 JumpToApplication(APP_START_ADDRESS);
+ 8a6:	20c0      	movs	r0, #192	; 0xc0
+ 8a8:	0100      	lsls	r0, r0, #4
+ 8aa:	4b18      	ldr	r3, [pc, #96]	; (90c <main+0xf8>)
+ 8ac:	4798      	blx	r3
+	SYSCTRL->OSC8M.bit.PRESC = 0;
+    /* Initialize the UART console. */
+    usart_open();
+	nvm_flash_init();
+	check_start_application();
+	status = XmodemReceive(APP_START_ADDRESS);
+ 8ae:	20c0      	movs	r0, #192	; 0xc0
+ 8b0:	0100      	lsls	r0, r0, #4
+ 8b2:	4b17      	ldr	r3, [pc, #92]	; (910 <main+0xfc>)
+ 8b4:	4798      	blx	r3
+ 8b6:	4c17      	ldr	r4, [pc, #92]	; (914 <main+0x100>)
+	if(SUCCESSFULL == status )
+ 8b8:	2800      	cmp	r0, #0
+ 8ba:	d111      	bne.n	8e0 <main+0xcc>
+	{
+		nvm_flag[0] = 0xAA;
+ 8bc:	4910      	ldr	r1, [pc, #64]	; (900 <main+0xec>)
+ 8be:	22aa      	movs	r2, #170	; 0xaa
+		nvm_flag[1] = 0x55;
+ 8c0:	2355      	movs	r3, #85	; 0x55
+	nvm_flash_init();
+	check_start_application();
+	status = XmodemReceive(APP_START_ADDRESS);
+	if(SUCCESSFULL == status )
+	{
+		nvm_flag[0] = 0xAA;
+ 8c2:	700a      	strb	r2, [r1, #0]
+		nvm_flag[1] = 0x55;
+		nvm_flag[2] = 0xAA;
+		nvm_flag[3] = 0x55;
+		nvm_flash_write((APP_START_ADDRESS-4),nvm_flag,4,1);
+ 8c4:	4810      	ldr	r0, [pc, #64]	; (908 <main+0xf4>)
+	check_start_application();
+	status = XmodemReceive(APP_START_ADDRESS);
+	if(SUCCESSFULL == status )
+	{
+		nvm_flag[0] = 0xAA;
+		nvm_flag[1] = 0x55;
+ 8c6:	704b      	strb	r3, [r1, #1]
+		nvm_flag[2] = 0xAA;
+		nvm_flag[3] = 0x55;
+		nvm_flash_write((APP_START_ADDRESS-4),nvm_flag,4,1);
+ 8c8:	4d13      	ldr	r5, [pc, #76]	; (918 <main+0x104>)
+	status = XmodemReceive(APP_START_ADDRESS);
+	if(SUCCESSFULL == status )
+	{
+		nvm_flag[0] = 0xAA;
+		nvm_flag[1] = 0x55;
+		nvm_flag[2] = 0xAA;
+ 8ca:	708a      	strb	r2, [r1, #2]
+		nvm_flag[3] = 0x55;
+ 8cc:	70cb      	strb	r3, [r1, #3]
+		nvm_flash_write((APP_START_ADDRESS-4),nvm_flag,4,1);
+ 8ce:	2204      	movs	r2, #4
+ 8d0:	2301      	movs	r3, #1
+ 8d2:	47a8      	blx	r5
+		uart_putc("\r\n->Firmware Update Successful ^_^ ^_^ ^_^ ！\r\n");
+ 8d4:	4811      	ldr	r0, [pc, #68]	; (91c <main+0x108>)
+ 8d6:	47a0      	blx	r4
+		JumpToApplication(APP_START_ADDRESS);
+ 8d8:	20c0      	movs	r0, #192	; 0xc0
+ 8da:	0100      	lsls	r0, r0, #4
+ 8dc:	4b0b      	ldr	r3, [pc, #44]	; (90c <main+0xf8>)
+ 8de:	4798      	blx	r3
+	}	
+	uart_putc("\r\n->Firmware Update Failed ！！！\r\n");
+ 8e0:	480f      	ldr	r0, [pc, #60]	; (920 <main+0x10c>)
+ 8e2:	47a0      	blx	r4
+ 8e4:	e7fe      	b.n	8e4 <main+0xd0>
+ 8e6:	46c0      	nop			; (mov r8, r8)
+ 8e8:	40000800 	.word	0x40000800
+ 8ec:	fffffcff 	.word	0xfffffcff
+ 8f0:	000002a9 	.word	0x000002a9
+ 8f4:	0000012d 	.word	0x0000012d
+ 8f8:	41004400 	.word	0x41004400
+ 8fc:	4100444f 	.word	0x4100444f
+ 900:	20000028 	.word	0x20000028
+ 904:	000001d5 	.word	0x000001d5
+ 908:	00000bfc 	.word	0x00000bfc
+ 90c:	000007f9 	.word	0x000007f9
+ 910:	000003d1 	.word	0x000003d1
+ 914:	00000349 	.word	0x00000349
+ 918:	00000139 	.word	0x00000139
+ 91c:	00000b70 	.word	0x00000b70
+ 920:	00000ba0 	.word	0x00000ba0
+
+00000924 <__libc_init_array>:
+ 924:	b570      	push	{r4, r5, r6, lr}
+ 926:	4b0e      	ldr	r3, [pc, #56]	; (960 <__libc_init_array+0x3c>)
+ 928:	4d0e      	ldr	r5, [pc, #56]	; (964 <__libc_init_array+0x40>)
+ 92a:	2400      	movs	r4, #0
+ 92c:	1aed      	subs	r5, r5, r3
+ 92e:	10ad      	asrs	r5, r5, #2
+ 930:	1c1e      	adds	r6, r3, #0
+ 932:	42ac      	cmp	r4, r5
+ 934:	d004      	beq.n	940 <__libc_init_array+0x1c>
+ 936:	00a3      	lsls	r3, r4, #2
+ 938:	58f3      	ldr	r3, [r6, r3]
+ 93a:	4798      	blx	r3
+ 93c:	3401      	adds	r4, #1
+ 93e:	e7f8      	b.n	932 <__libc_init_array+0xe>
+ 940:	f000 f940 	bl	bc4 <_init>
+ 944:	4b08      	ldr	r3, [pc, #32]	; (968 <__libc_init_array+0x44>)
+ 946:	4d09      	ldr	r5, [pc, #36]	; (96c <__libc_init_array+0x48>)
+ 948:	2400      	movs	r4, #0
+ 94a:	1aed      	subs	r5, r5, r3
+ 94c:	10ad      	asrs	r5, r5, #2
+ 94e:	1c1e      	adds	r6, r3, #0
+ 950:	42ac      	cmp	r4, r5
+ 952:	d004      	beq.n	95e <__libc_init_array+0x3a>
+ 954:	00a3      	lsls	r3, r4, #2
+ 956:	58f3      	ldr	r3, [r6, r3]
+ 958:	4798      	blx	r3
+ 95a:	3401      	adds	r4, #1
+ 95c:	e7f8      	b.n	950 <__libc_init_array+0x2c>
+ 95e:	bd70      	pop	{r4, r5, r6, pc}
+ 960:	00000bd0 	.word	0x00000bd0
+ 964:	00000bd0 	.word	0x00000bd0
+ 968:	00000bd0 	.word	0x00000bd0
+ 96c:	00000bd4 	.word	0x00000bd4
+
+00000970 <crc16tab>:
+ 970:	10210000 30632042 50a54084 70e760c6     ..!.B c0.@.P.`.p
+ 980:	91298108 b16ba14a d1adc18c f1efe1ce     ..).J.k.........
+ 990:	02101231 22523273 429452b5 62d672f7     1...s2R".R.B.r.b
+ 9a0:	83189339 a35ab37b c39cd3bd e3def3ff     9...{.Z.........
+ 9b0:	34432462 14010420 74c764e6 548544a4     b$C4 ....d.t.D.T
+ 9c0:	b54ba56a 95098528 f5cfe5ee d58dc5ac     j.K.(...........
+ 9d0:	26723653 06301611 66f676d7 46b45695     S6r&..0..v.f.V.F
+ 9e0:	a77ab75b 87389719 e7fef7df c7bcd79d     [.z...8.........
+ 9f0:	58e548c4 78a76886 18610840 38232802     .H.X.h.x@.a..(#8
+ a00:	d9edc9cc f9afe98e 99698948 b92ba90a     ........H.i...+.
+ a10:	4ad45af5 6a967ab7 0a501a71 2a123a33     .Z.J.z.jq.P.3:.*
+ a20:	cbdcdbfd eb9efbbf 8b589b79 ab1abb3b     ........y.X.;...
+ a30:	7c876ca6 5cc54ce4 3c032c22 1c410c60     .l.|.L.\",.<`.A.
+ a40:	fd8fedae ddcdcdec bd0bad2a 9d498d68     ........*...h.I.
+ a50:	6eb67e97 4ef45ed5 2e323e13 0e701e51     .~.n.^.N.>2.Q.p.
+ a60:	efbeff9f cffcdfdd af3abf1b 8f789f59     ..........:.Y.x.
+ a70:	81a99188 a1ebb1ca c12dd10c e16ff14e     ..........-.N.o.
+ a80:	00a11080 20e330c2 40255004 60677046     .....0. .P%@Fpg`
+ a90:	939883b9 b3daa3fb d31cc33d f35ee37f     ........=.....^.
+ aa0:	129002b1 32d222f3 52144235 72566277     .....".25B.RwbVr
+ ab0:	a5cbb5ea 858995a8 e54ff56e c50dd52c     ........n.O.,...
+ ac0:	24c334e2 048114a0 64477466 44055424     .4.$....ftGd$T.D
+ ad0:	b7faa7db 97b88799 f77ee75f d73cc71d     ........_.~...<.
+ ae0:	36f226d3 16b00691 76766657 56344615     .&.6....Wfvv.F4V
+ af0:	c96dd94c e92ff90e 89e999c8 a9abb98a     L.m.../.........
+ b00:	48655844 68277806 08e118c0 28a33882     DXeH.x'h.....8.(
+ b10:	db5ccb7d fb1eeb3f 9bd88bf9 bb9aabbb     }.\.?...........
+ b20:	5a544a75 7a166a37 1ad00af1 3a922ab3     uJTZ7j.z.....*.:
+ b30:	ed0ffd2e cd4ddd6c ad8bbdaa 8dc99de8     ....l.M.........
+ b40:	6c077c26 4c455c64 2c833ca2 0cc11ce0     &|.ld\EL.<.,....
+ b50:	ff3eef1f df7ccf5d bfbaaf9b 9ff88fd9     ..>.].|.........
+ b60:	7e366e17 5e744e55 3eb22e93 1ef00ed1     .n6~UNt^...>....
+ b70:	3e2d0a0d 6d726946 65726177 64705520     ..->Firmware Upd
+ b80:	20657461 63637553 66737365 5e206c75     ate Successful ^
+ b90:	5e205e5f 5e205e5f a3205e5f 000a0da1     _^ ^_^ ^_^ .....
+ ba0:	3e2d0a0d 6d726946 65726177 64705520     ..->Firmware Upd
+ bb0:	20657461 6c696146 a3206465 a3a1a3a1     ate Failed .....
+ bc0:	000a0da1                                ....
+
+00000bc4 <_init>:
+ bc4:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ bc6:	46c0      	nop			; (mov r8, r8)
+ bc8:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ bca:	bc08      	pop	{r3}
+ bcc:	469e      	mov	lr, r3
+ bce:	4770      	bx	lr
+
+00000bd0 <__init_array_start>:
+ bd0:	000000cd 	.word	0x000000cd
+
+00000bd4 <_fini>:
+ bd4:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ bd6:	46c0      	nop			; (mov r8, r8)
+ bd8:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ bda:	bc08      	pop	{r3}
+ bdc:	469e      	mov	lr, r3
+ bde:	4770      	bx	lr
+
+00000be0 <__fini_array_start>:
+ be0:	000000a5 	.word	0x000000a5
